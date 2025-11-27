@@ -1709,3 +1709,26 @@ Watching for file changes with StatReloader
 "OPTIONS /api/newsletter/subscribe/ HTTP/1.1" 200 0
 "POST /api/newsletter/subscribe/ HTTP/1.1" 200 55
 Watching for file changes with StatReloader
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/pantalon3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1a_cuFSxZl.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1b_ppkJ1uO.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2b.webp HTTP/1.1" 304 0
+"POST /api/newsletter/subscribe/ HTTP/1.1" 200 55

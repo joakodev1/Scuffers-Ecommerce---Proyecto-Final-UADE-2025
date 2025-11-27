@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Youtube, Music2, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import Newsletter from "../Newsletter.jsx";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -37,6 +37,11 @@ export default function Footer() {
 
   return (
     <footer className="mt-0 bg-white text-slate-800 border-t border-slate-200">
+
+     <div className="max-w-5xl mx-auto px-4">
+    <Newsletter />
+  </div>
+
       {/* CONTENIDO PRINCIPAL */}
       <div className="max-w-6xl mx-auto px-4 py-12 grid gap-10 md:grid-cols-4">
         {/* Columna 1: Marca + texto */}
@@ -159,62 +164,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
-      {/* NEWSLETTER – BLOQUE CENTRAL */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.4 }}
-        className="border-t border-slate-200 bg-slate-50/60"
-      >
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="max-w-xl mx-auto text-center space-y-4">
-            <h3 className="text-base font-semibold text-slate-900">
-              Suscribite a los drops de Scuffers
-            </h3>
-            <p className="text-sm text-slate-600">
-              Enterate primero de nuevos lanzamientos, restocks y promos
-              exclusivas. Nada de spam, solo streetwear.
-            </p>
-
-            <form
-              onSubmit={handleNewsletterSubmit}
-              className="mt-2 flex flex-col sm:flex-row items-center gap-3"
-            >
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  if (submitted) setSubmitted(false);
-                }}
-                placeholder="Tu email"
-                className="w-full sm:flex-1 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm 
-                           outline-none focus:ring-2 focus:ring-slate-900/70 focus:border-slate-900/70
-                           placeholder:text-slate-400"
-              />
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 
-                           text-sm font-medium text-white shadow-sm shadow-slate-900/20 
-                           hover:bg-slate-800 transition-colors"
-              >
-                Suscribirme
-              </motion.button>
-            </form>
-
-            {submitted && (
-              <p className="text-xs text-emerald-600 mt-1">
-                ¡Gracias por suscribirte! Más adelante conectamos esto para que
-                te lleguen novedades reales de Scuffers 💌
-              </p>
-            )}
-          </div>
-        </div>
-      </motion.div>
 
       {/* LÍNEA INFERIOR */}
       <div className="border-t border-slate-200 bg-slate-50/80">
