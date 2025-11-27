@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://scuffers-ecommerce-proyecto-final-uade-2025-production.up.railway.app/api",
   // withCredentials: true,  // ❌ sacá esta línea (o ponela en false)
 });
 
