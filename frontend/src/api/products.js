@@ -1,10 +1,11 @@
 // src/api/products.js
 
-// Base para API REST
-export const API_URL = "http://localhost:8000/api";
+export const API_URL =
+  "https://scuffers-ecommerce-proyecto-final-uade-2025-production.up.railway.app/api";
 
 // Base para imágenes
-export const API_BASE_URL = "http://localhost:8000";
+export const API_BASE_URL =
+  "https://scuffers-ecommerce-proyecto-final-uade-2025-production.up.railway.app";
 
 // Convierte una ruta de imagen en URL completa
 export function getImageUrl(path) {
