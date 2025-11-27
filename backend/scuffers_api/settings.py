@@ -27,7 +27,8 @@ DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    ".railway.app",  # cualquier dominio de Railway
+    ".railway.app",
+    ".vercel.app",
 ]
 
 # Application definition
@@ -162,11 +163,12 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    os.getenv("FRONTEND_ORIGIN", "http://localhost:5173"),
+    "https://scuffers-ecommerce-proyecto-final-u.vercel.app",
+    "http://localhost:5173",  # para que siga andando en tu PC
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:5173",
+    "https://scuffers-ecommerce-proyecto-final-u.vercel.app",
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
