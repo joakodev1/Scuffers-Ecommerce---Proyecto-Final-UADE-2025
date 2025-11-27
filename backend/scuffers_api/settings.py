@@ -183,7 +183,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # En producción (DEBUG=False) se vuelven estrictas.
 if not DEBUG:
     # Obligar a usar HTTPS
-    SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = False
 
     # Strict Transport Security: decirle al navegador que SIEMPRE use HTTPS
     SECURE_HSTS_SECONDS = 31536000  # 1 año
