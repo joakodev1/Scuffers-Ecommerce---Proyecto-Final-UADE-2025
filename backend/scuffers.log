@@ -1,0 +1,1711 @@
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 19579
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"GET /admin/auth/user/add/ HTTP/1.1" 200 14638
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+"GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+"GET /admin/auth/user/ HTTP/1.1" 200 19579
+"GET /admin/auth/user/ HTTP/1.1" 200 19579
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/group/ HTTP/1.1" 200 10374
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 19579
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/add/ HTTP/1.1" 200 14638
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/add/ HTTP/1.1" 302 0
+"GET /admin/auth/user/14/change/ HTTP/1.1" 200 25759
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/?cat=carteras HTTP/1.1" 200 2509
+"POST /admin/auth/user/14/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 20268
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /admin/auth/user/14/change/ HTTP/1.1" 200 25601
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 20067
+"POST /admin/logout/ HTTP/1.1" 200 3568
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+"GET /static/admin/css/login.css HTTP/1.1" 200 951
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 4519
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"POST /admin/logout/ HTTP/1.1" 200 3568
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 10349
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /admin/shop/producto/ HTTP/1.1" 200 27629
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 20067
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/14/change/ HTTP/1.1" 200 25637
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/14/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 20268
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/logout/ HTTP/1.1" 200 3568
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 7982
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/polo3a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4b.webp HTTP/1.1" 304 0
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /media/productos/chaqueta1c.webp HTTP/1.1" 200 100940
+"GET /media/productos/chaqueta1d.webp HTTP/1.1" 200 338840
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /media/productos/campera4c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4d.webp HTTP/1.1" 304 0
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 550
+"GET /api/cart/my/ HTTP/1.1" 200 718
+"GET /api/cart/my/ HTTP/1.1" 200 718
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /api/products/?cat=carteras HTTP/1.1" 200 2509
+"GET /api/products/?cat=carteras HTTP/1.1" 200 2509
+"GET /media/productos/gorra1a_cuFSxZl.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1b_ppkJ1uO.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2b.webp HTTP/1.1" 304 0
+"GET /api/products/brumel-cap/ HTTP/1.1" 200 599
+"GET /api/products/brumel-cap/ HTTP/1.1" 200 599
+"GET /media/productos/gorra4d.webp HTTP/1.1" 200 172110
+"GET /media/productos/gorra4c.webp HTTP/1.1" 200 876320
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+"POST /api/auth/register/ HTTP/1.1" 201 599
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 599
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/pantalon3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4b.webp HTTP/1.1" 304 0
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"POST /api/cart/add/ HTTP/1.1" 200 581
+"GET /api/cart/my/ HTTP/1.1" 200 749
+"GET /api/cart/my/ HTTP/1.1" 200 749
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"POST /api/cart/add/ HTTP/1.1" 200 1102
+"GET /api/cart/my/ HTTP/1.1" 200 1438
+"GET /api/cart/my/ HTTP/1.1" 200 1438
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /api/cart/my/ HTTP/1.1" 200 1438
+"GET /api/cart/my/ HTTP/1.1" 200 1438
+"OPTIONS /api/cart/remove/ HTTP/1.1" 200 0
+"POST /api/cart/remove/ HTTP/1.1" 200 581
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/pantalon4a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera2c.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera1.webp HTTP/1.1" 304 0
+"GET /media/productos/remera1a.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"OPTIONS /api/newsletter/subscribe/ HTTP/1.1" 200 0
+Too Many Requests: /api/newsletter/subscribe/
+"POST /api/newsletter/subscribe/ HTTP/1.1" 429 70
+Too Many Requests: /api/newsletter/subscribe/
+"POST /api/newsletter/subscribe/ HTTP/1.1" 429 70
+Too Many Requests: /api/newsletter/subscribe/
+"POST /api/newsletter/subscribe/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+Too Many Requests: /api/products/
+"GET /api/products/ HTTP/1.1" 429 70
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Internal Server Error: /api/products/show-off-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/show-off-jacket/ HTTP/1.1" 500 110851
+Internal Server Error: /api/products/show-off-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/show-off-jacket/ HTTP/1.1" 500 110851
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+Internal Server Error: /api/products/moss-jacket/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/moss-jacket/ HTTP/1.1" 500 110751
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Internal Server Error: /api/products/grey-full-zip/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/grey-full-zip/ HTTP/1.1" 500 110801
+Internal Server Error: /api/products/grey-full-zip/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/grey-full-zip/ HTTP/1.1" 500 110801
+Watching for file changes with StatReloader
+Internal Server Error: /api/products/grey-full-zip/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/grey-full-zip/ HTTP/1.1" 500 110801
+Internal Server Error: /api/products/grey-full-zip/
+Traceback (most recent call last):
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\venv\Lib\site-packages\rest_framework\generics.py", line 92, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected view ProductDetailView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"GET /api/products/grey-full-zip/ HTTP/1.1" 500 110801
+Not Found: /admin/shop/producto/
+"GET /admin/shop/producto/ HTTP/1.1" 404 2928
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2901
+Not Found: /productos/remera1.webp
+"GET /productos/remera1.webp HTTP/1.1" 404 2934
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /media/productos/campera4c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4d.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"POST /api/auth/register/ HTTP/1.1" 201 602
+"POST /api/auth/login/ HTTP/1.1" 200 602
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /media/productos/chaqueta1c.webp HTTP/1.1" 200 100940
+"GET /media/productos/chaqueta1d.webp HTTP/1.1" 200 338840
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 586
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"GET /api/cart/my/ HTTP/1.1" 200 754
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 200 218356
+"GET /api/cart/my/ HTTP/1.1" 200 754
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"POST /api/cart/add/ HTTP/1.1" 200 102
+"GET /api/cart/my/ HTTP/1.1" 200 102
+"GET /api/cart/my/ HTTP/1.1" 200 102
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"POST /api/cart/add/ HTTP/1.1" 200 145
+"GET /api/cart/my/ HTTP/1.1" 200 145
+"GET /api/cart/my/ HTTP/1.1" 200 145
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"POST /api/cart/add/ HTTP/1.1" 200 187
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/cart/my/ HTTP/1.1" 200 187
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"POST /api/auth/register/ HTTP/1.1" 201 596
+"POST /api/auth/login/ HTTP/1.1" 200 596
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+Not Found: /api/cart/add/
+"POST /api/cart/add/ HTTP/1.1" 404 49
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /media/productos/chaqueta2c.webp HTTP/1.1" 200 88322
+"GET /media/productos/chaqueta2d.webp HTTP/1.1" 200 205366
+Not Found: /api/cart/add/
+"POST /api/cart/add/ HTTP/1.1" 404 49
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /media/productos/polo1c.webp HTTP/1.1" 200 541116
+"GET /media/productos/polo1d.webp HTTP/1.1" 200 686974
+Not Found: /api/cart/add/
+"POST /api/cart/add/ HTTP/1.1" 404 49
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/auth/me/ HTTP/1.1" 200 97
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 37
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 37
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 37
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 37
+Bad Request: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 400 37
+"POST /api/auth/login/ HTTP/1.1" 200 592
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /media/productos/pantalon3c.webp HTTP/1.1" 200 29980
+"GET /media/productos/pantalon3d.webp HTTP/1.1" 200 55208
+"POST /api/cart/add/ HTTP/1.1" 200 103
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/spark-baggy-shadow-sweatpants/ HTTP/1.1" 200 663
+"GET /api/products/spark-baggy-shadow-sweatpants/ HTTP/1.1" 200 663
+"GET /media/productos/pantalon2c.webp HTTP/1.1" 200 92038
+"GET /media/productos/pantalon2d.webp HTTP/1.1" 200 287680
+"POST /api/cart/add/ HTTP/1.1" 200 146
+"GET /api/products/?cat=carteras HTTP/1.1" 200 2509
+"GET /api/products/?cat=carteras HTTP/1.1" 200 2509
+"GET /api/products/mbuddy-hunt-cap/ HTTP/1.1" 200 608
+"GET /api/products/mbuddy-hunt-cap/ HTTP/1.1" 200 608
+"GET /media/productos/gorra2c.webp HTTP/1.1" 200 385796
+"GET /media/productos/gorra2d.webp HTTP/1.1" 200 154048
+"POST /api/cart/add/ HTTP/1.1" 200 187
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=camisas HTTP/1.1" 200 6287
+"GET /api/products/shadow-oversized-tee/ HTTP/1.1" 200 643
+"GET /api/products/shadow-oversized-tee/ HTTP/1.1" 200 643
+"GET /media/productos/camiseta1c.webp HTTP/1.1" 200 51808
+"GET /media/productos/camiseta1d.webp HTTP/1.1" 200 51230
+"POST /api/cart/add/ HTTP/1.1" 200 229
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /media/productos/chaqueta2d.webp HTTP/1.1" 200 205366
+"GET /media/productos/chaqueta2c.webp HTTP/1.1" 200 88322
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Too Many Requests: /api/products/grey-full-zip/
+"GET /api/products/grey-full-zip/ HTTP/1.1" 429 71
+Too Many Requests: /api/products/grey-full-zip/
+"GET /api/products/grey-full-zip/ HTTP/1.1" 429 71
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Too Many Requests: /api/products/grey-full-zip/
+"GET /api/products/grey-full-zip/ HTTP/1.1" 429 71
+Too Many Requests: /api/products/grey-full-zip/
+"GET /api/products/grey-full-zip/ HTTP/1.1" 429 71
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/polo2a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5b.webp HTTP/1.1" 304 0
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /media/productos/campera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1b.webp HTTP/1.1" 304 0
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4d.webp HTTP/1.1" 304 0
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /api/products/?cat=hoodies HTTP/1.1" 200 6224
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3b.webp HTTP/1.1" 304 0
+"GET /api/products/ethos-forest-boxy-jacket/ HTTP/1.1" 200 644
+"GET /api/products/ethos-forest-boxy-jacket/ HTTP/1.1" 200 644
+"GET /media/productos/campera3d.webp HTTP/1.1" 200 78382
+"GET /media/productos/campera3c.webp HTTP/1.1" 200 199384
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /media/productos/pantalon3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1b.webp HTTP/1.1" 304 0
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /api/products/chali-grape-nwb/ HTTP/1.1" 200 635
+"GET /media/productos/pantalon3c.webp HTTP/1.1" 200 29980
+"GET /media/productos/pantalon3d.webp HTTP/1.1" 200 55208
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 229
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/gorra3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1a_cuFSxZl.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1b_ppkJ1uO.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2b.webp HTTP/1.1" 304 0
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /media/productos/campera6d.webp HTTP/1.1" 200 34798
+"GET /media/productos/campera6c.webp HTTP/1.1" 200 162018
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/?cat=abrigos HTTP/1.1" 200 3194
+"GET /api/products/spark-baggy-shadow-sweatpants/ HTTP/1.1" 200 663
+"GET /api/products/spark-baggy-shadow-sweatpants/ HTTP/1.1" 200 663
+"GET /media/productos/pantalon2c.webp HTTP/1.1" 200 92038
+"GET /media/productos/pantalon2d.webp HTTP/1.1" 200 287680
+"POST /api/cart/add/ HTTP/1.1" 200 229
+"GET /api/cart/my/ HTTP/1.1" 200 229
+"GET /api/cart/my/ HTTP/1.1" 200 229
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/auth/me/ HTTP/1.1" 200 93
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /api/cart/my/ HTTP/1.1" 200 2209
+"GET /api/cart/my/ HTTP/1.1" 200 2209
+"OPTIONS /api/cart/remove/ HTTP/1.1" 200 0
+"POST /api/cart/remove/ HTTP/1.1" 200 1702
+"POST /api/cart/remove/ HTTP/1.1" 200 1139
+"POST /api/cart/remove/ HTTP/1.1" 200 603
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /media/productos/chaqueta1c.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1d.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"POST /api/cart/add/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/shadow-oversized-tee/ HTTP/1.1" 200 643
+"GET /api/products/shadow-oversized-tee/ HTTP/1.1" 200 643
+"GET /media/productos/camiseta1c.webp HTTP/1.1" 200 51808
+"GET /media/productos/camiseta1d.webp HTTP/1.1" 200 51230
+"POST /api/cart/add/ HTTP/1.1" 200 603
+"GET /api/cart/my/ HTTP/1.1" 200 603
+"GET /api/cart/my/ HTTP/1.1" 200 603
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/remera5a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5b.webp HTTP/1.1" 304 0
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"POST /api/cart/add/ HTTP/1.1" 200 583
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+Unauthorized: /api/cart/my/
+"GET /api/cart/my/ HTTP/1.1" 401 172
+Unauthorized: /api/cart/my/
+"GET /api/cart/my/ HTTP/1.1" 401 172
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/me/
+"GET /api/auth/me/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/me/
+"GET /api/auth/me/ HTTP/1.1" 401 172
+"OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+"POST /api/auth/register/ HTTP/1.1" 201 602
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 602
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/polo2b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon2b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon1b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1a_cuFSxZl.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra1b_ppkJ1uO.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra2b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera2c.webp HTTP/1.1" 304 0
+"GET /media/productos/remera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera1.webp HTTP/1.1" 304 0
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /media/productos/campera6c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6d.webp HTTP/1.1" 304 0
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"POST /api/cart/add/ HTTP/1.1" 200 585
+"POST /api/cart/add/ HTTP/1.1" 200 585
+"POST /api/cart/add/ HTTP/1.1" 200 585
+"POST /api/cart/add/ HTTP/1.1" 200 585
+"POST /api/cart/add/ HTTP/1.1" 200 585
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /media/productos/campera4c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4d.webp HTTP/1.1" 304 0
+"POST /api/cart/add/ HTTP/1.1" 200 1105
+"GET /api/cart/my/ HTTP/1.1" 200 1105
+"GET /api/cart/my/ HTTP/1.1" 200 1105
+"OPTIONS /api/cart/remove/ HTTP/1.1" 200 0
+"POST /api/cart/remove/ HTTP/1.1" 200 585
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /media/productos/chaqueta2c.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2d.webp HTTP/1.1" 304 0
+"POST /api/cart/add/ HTTP/1.1" 200 594
+"GET /api/cart/my/ HTTP/1.1" 200 594
+"GET /api/cart/my/ HTTP/1.1" 200 594
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/cart/my/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"POST /api/cart/add/ HTTP/1.1" 200 581
+"GET /api/cart/my/ HTTP/1.1" 200 581
+"GET /api/cart/my/ HTTP/1.1" 200 581
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/?cat=remeras HTTP/1.1" 200 2
+"GET /api/products/?cat=buzos HTTP/1.1" 200 2
+"GET /api/products/?cat=pantalones HTTP/1.1" 200 2
+"GET /api/products/?cat=accesorios HTTP/1.1" 200 2
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"OPTIONS /api/newsletter/subscribe/ HTTP/1.1" 200 0
+"POST /api/newsletter/subscribe/ HTTP/1.1" 200 280
+"POST /api/newsletter/subscribe/ HTTP/1.1" 200 280
+"POST /api/newsletter/subscribe/ HTTP/1.1" 200 280
+"OPTIONS /api/contact/ HTTP/1.1" 200 0
+Internal Server Error: /api/contact/
+"POST /api/contact/ HTTP/1.1" 500 228
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/brulee-tbp/ HTTP/1.1" 200 625
+"GET /api/products/brulee-tbp/ HTTP/1.1" 200 625
+"GET /media/productos/pantalon4c.webp HTTP/1.1" 200 353092
+"GET /media/productos/pantalon4d.webp HTTP/1.1" 200 294550
+"POST /api/cart/add/ HTTP/1.1" 200 1105
+"GET /api/cart/my/ HTTP/1.1" 200 1105
+"GET /api/cart/my/ HTTP/1.1" 200 1105
+"POST /api/cart/remove/ HTTP/1.1" 200 581
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+Internal Server Error: /api/contact/
+"POST /api/contact/ HTTP/1.1" 500 228
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/contact/ HTTP/1.1" 200 43
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 103
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /api/products/show-off-jacket/ HTTP/1.1" 200 635
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/campera6b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera6a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta5a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta3b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta2b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta1b.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4a.webp HTTP/1.1" 304 0
+"GET /media/productos/camiseta4b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo1a.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/polo3a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2a.webp HTTP/1.1" 304 0
+"GET /media/productos/polo2b.webp HTTP/1.1" 304 0
+"GET /media/productos/polo3b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4a.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon4b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5b.webp HTTP/1.1" 304 0
+"GET /media/productos/pantalon5a.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /media/productos/chaqueta1d.webp HTTP/1.1" 304 0
+"GET /media/productos/chaqueta1c.webp HTTP/1.1" 304 0
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 586
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"OPTIONS /api/cart/my/ HTTP/1.1" 200 0
+"GET /api/cart/my/ HTTP/1.1" 200 586
+"GET /api/cart/my/ HTTP/1.1" 200 586
+"OPTIONS /api/auth/register/ HTTP/1.1" 200 0
+"POST /api/auth/register/ HTTP/1.1" 201 599
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 599
+"OPTIONS /api/auth/me/ HTTP/1.1" 200 0
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/campera1a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera1b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2a.webp HTTP/1.1" 304 0
+"GET /media/productos/campera2b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra3b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/campera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4b.webp HTTP/1.1" 304 0
+"GET /media/productos/gorra4a.webp HTTP/1.1" 304 0
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /api/products/black-full-zip/ HTTP/1.1" 200 624
+"GET /media/productos/campera6d.webp HTTP/1.1" 200 34798
+"GET /media/productos/campera6c.webp HTTP/1.1" 200 162018
+"POST /api/cart/add/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"GET /api/cart/my/ HTTP/1.1" 200 583
+"OPTIONS /api/cart/remove/ HTTP/1.1" 200 0
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"GET /api/products/moss-jacket/ HTTP/1.1" 200 627
+"POST /api/cart/add/ HTTP/1.1" 200 586
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /api/products/kiff-polo-navy/ HTTP/1.1" 200 597
+"GET /media/productos/polo1c.webp HTTP/1.1" 200 541116
+"GET /media/productos/polo1d.webp HTTP/1.1" 200 686974
+"GET /api/cart/my/ HTTP/1.1" 200 586
+"GET /api/cart/my/ HTTP/1.1" 200 586
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/thrill-navy-long-sleeve/ HTTP/1.1" 200 630
+"GET /api/products/thrill-navy-long-sleeve/ HTTP/1.1" 200 630
+"GET /media/productos/remera2b.webp HTTP/1.1" 200 128084
+"GET /media/productos/remera2.webp HTTP/1.1" 200 146424
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /media/productos/campera4c.webp HTTP/1.1" 304 0
+"GET /media/productos/campera4d.webp HTTP/1.1" 304 0
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/pearl-oversized-tee/ HTTP/1.1" 200 534
+"GET /api/products/pearl-oversized-tee/ HTTP/1.1" 200 534
+"GET /media/productos/camiseta4c.webp HTTP/1.1" 200 89238
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"OPTIONS /api/newsletter/subscribe/ HTTP/1.1" 200 0
+"POST /api/newsletter/subscribe/ HTTP/1.1" 200 55
+Watching for file changes with StatReloader

@@ -1,0 +1,69 @@
+# ---------------------------
+# FRONTEND (Vite + React)
+# ---------------------------
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ---------------------------
+# BACKEND (Django)
+# ---------------------------
+
+# Entorno virtual
+backend/venv/
+venv/
+env/
+ENV/
+
+# Archivos Python cache
+__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de base de datos temporales
+db.sqlite3
+*.sqlite3
+
+# Archivos estáticos recopilados en producción
+staticfiles/
+static/
+
+# Archivos generados por Django
+*.pot
+*.pyc
+*.pyo
+
+# ---------------------------
+# SECRETOS / CONFIG PRIVADA
+# ---------------------------
+.env
+backend/.env
+*.env
+
+# ---------------------------
+# OTROS
+# ---------------------------
+Thumbs.db
