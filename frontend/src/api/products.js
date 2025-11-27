@@ -13,7 +13,6 @@ export function getImageUrl(path) {
   return `${API_BASE_URL}${path}`;
 }
 
-// Intenta detectar la propiedad correcta de imagen del objeto que viene del backend
 function extractImagePath(obj = {}) {
   return (
     obj.imagen ||        // español
@@ -55,9 +54,8 @@ export async function fetchProducts({ cat, search } = {}) {
   });
 }
 
-// 🔹 Detalle de producto por slug
 export async function fetchProductBySlug(slug) {
-  // 🔧 limpiamos el slug por las dudas
+
   const cleanSlug = encodeURIComponent(String(slug || "").split("/")[0].trim());
 
   const url = `${API_URL}/products/${cleanSlug}/`;

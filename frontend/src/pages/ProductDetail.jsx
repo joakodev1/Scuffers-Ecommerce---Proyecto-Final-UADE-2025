@@ -41,12 +41,11 @@ export default function ProductDetail() {
     load();
   }, [slug]);
 
-  // --------------- REGLA: ¿ESTE PRODUCTO NECESITA TALLE? ---------------
+
   const category = (product?.categoria || "").toLowerCase();
 
   const needsSize =
-    // si en el futuro agregás un booleano en el modelo, lo podés usar acá:
-    // Boolean(product?.tiene_talles) ||
+
     ["remera", "remeras",
      "buzo", "buzos",
      "campera", "camperas",
@@ -56,7 +55,7 @@ export default function ProductDetail() {
      "camisa", "camisas"
     ].some((kw) => category.includes(kw));
 
-  // usamos la misma condición para mostrar el selector
+
   const showSizeSelector = needsSize;
 
   // ---------------- AGREGAR AL CARRITO ----------------
@@ -108,7 +107,7 @@ export default function ProductDetail() {
     ? "Agregado ✔"
     : "Agregar al carrito";
 
-  // 🔒 botón deshabilitado si necesita talle y no se eligió
+
   const buttonDisabled = adding || (needsSize && !selectedSize);
 
   return (

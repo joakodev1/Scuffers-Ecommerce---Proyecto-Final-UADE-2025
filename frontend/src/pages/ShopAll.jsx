@@ -75,7 +75,6 @@ export default function ShopAll() {
             return (
               <Link
                 key={product.slug || product.id}
-                // 👇 solo usamos el slug para la ruta del detalle
                 to={`/product/${product.slug}`}
                 className="block group"
               >

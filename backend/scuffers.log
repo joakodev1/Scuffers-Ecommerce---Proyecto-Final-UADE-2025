@@ -1732,3 +1732,63 @@ Watching for file changes with StatReloader
 "GET /media/productos/gorra2a.webp HTTP/1.1" 304 0
 "GET /media/productos/gorra2b.webp HTTP/1.1" 304 0
 "POST /api/newsletter/subscribe/ HTTP/1.1" 200 55
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+Watching for file changes with StatReloader
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /media/productos/remera5a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera5b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3b.webp HTTP/1.1" 304 0
+"GET /media/productos/remera3a.webp HTTP/1.1" 304 0
+"GET /media/productos/remera4b.webp HTTP/1.1" 304 0
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/auth/me/ HTTP/1.1" 200 100
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/ HTTP/1.1" 200 18211
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"GET /api/products/grey-full-zip/ HTTP/1.1" 200 622
+"OPTIONS /api/cart/add/ HTTP/1.1" 200 0
+"POST /api/cart/add/ HTTP/1.1" 200 581
+"GET /api/cart/my/ HTTP/1.1" 200 581
+"GET /api/cart/my/ HTTP/1.1" 200 581
+"POST /api/cart/remove/ HTTP/1.1" 200 58
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\scuffers_api\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\notjo\OneDrive\Escritorio\ProyectoFinal\backend\shop\views.py changed, reloading.
+Watching for file changes with StatReloader

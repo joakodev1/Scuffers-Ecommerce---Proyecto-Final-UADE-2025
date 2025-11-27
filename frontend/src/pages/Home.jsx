@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Hero from "../components/Hero.jsx";
 import { fetchProducts } from "../api/products.js";
 import { CATEGORY_LABELS } from "../data/products.js";
-import Newsletter from "../components/Newsletter.jsx";
 
 function FeaturedProductsSection() {
   const [products, setProducts] = useState([]);

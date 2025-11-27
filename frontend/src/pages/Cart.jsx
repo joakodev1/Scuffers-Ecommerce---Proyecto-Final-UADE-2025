@@ -31,16 +31,14 @@ export default function Cart() {
       return;
     }
     refreshCart();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [isAuthenticated]);
 
-  // ✅ ahora el serializer SIEMPRE devuelve "items"
+
   const items = cart?.items || [];
 
-  // ✅ el serializer usa "total_precio"
   const total = Number(cart?.total_precio ?? 0);
 
-  // Helpers para slug, talle, producto, imagen, etc.
   function getItemSlug(item) {
     return (
       item.producto?.slug ||
@@ -56,14 +54,12 @@ export default function Cart() {
   }
 
   function getItemProduct(item) {
-    // con el nuevo serializer viene en "producto"
     return item.producto || item.product || {};
   }
 
   function getItemImageSrc(item) {
     const p = getItemProduct(item);
 
-    // Primero probamos con la galería (images), después con image
     const raw =
       (Array.isArray(p.images) && p.images[0]) ||
       p.image ||
@@ -92,7 +88,6 @@ export default function Cart() {
   }
 
   function getItemSubtotal(item) {
-    // ✅ usamos el subtotal que manda el backend
     if (item.subtotal != null) {
       return Number(item.subtotal);
     }
@@ -122,9 +117,7 @@ export default function Cart() {
     await removeFromCart(slug, qty, size);
   }
 
-  // 🔐 lógica de "pagar" (checkout falso con popup)
   async function handleCheckout() {
-    // Por las dudas, chequeamos de nuevo
     if (totalItems === 0 || items.length === 0 || checkingOut || updating) {
       return;
     }
@@ -191,7 +184,6 @@ export default function Cart() {
 
           <div className="space-y-4">
             {items.map((item, index) => {
-              // ✅ ahora cada item tiene id; usamos eso como key
               const idKey =
                 item.id ||
                 `${getItemSlug(item) || "item"}-${

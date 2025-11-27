@@ -6,7 +6,6 @@ export default function ProtectedRoute({ children }) {
   const { isAuthenticated, authLoading } = useAuth();
   const location = useLocation();
 
-  // Si tu AuthContext no tiene authLoading, esto simplemente será undefined
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
@@ -16,7 +15,6 @@ export default function ProtectedRoute({ children }) {
   }
 
   if (!isAuthenticated) {
-    // Lo mando al login y le paso desde dónde venía
     return (
       <Navigate
         to="/login"
