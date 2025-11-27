@@ -9,24 +9,26 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# ---------------------------------------------------------------------
+# BASE
+# ---------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-me")
 
-# 🔥 Para que funcione sin vueltas en Railway (después lo podés volver a False)
+# ⚠️ Para el TP lo dejamos en True (después lo podés controlar con la .env)
 DEBUG = True
 
-# 🔓 Para el TP no nos complicamos con hosts
+# No nos complicamos con hosts para Railway
 ALLOWED_HOSTS = ["*"]
 
-# Application definition
-
+# ---------------------------------------------------------------------
+# APPS
+# ---------------------------------------------------------------------
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -40,10 +42,14 @@ INSTALLED_APPS = [
     "corsheaders",
 ]
 
+# ---------------------------------------------------------------------
+# MIDDLEWARE
+# ---------------------------------------------------------------------
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    # Dejo el CommonMiddleware normal, no debería generar loops
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -70,12 +76,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "scuffers_api.wsgi.application"
 
-
-# Database
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# DATABASE
+# ---------------------------------------------------------------------
 if DEBUG:
-    # 🖥️ MODO LOCAL
+    # 🖥️ LOCAL
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
@@ -87,7 +92,7 @@ if DEBUG:
         }
     }
 else:
-    # 🌐 MODO RAILWAY
+    # 🌐 RAILWAY
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
@@ -99,10 +104,9 @@ else:
         }
     }
 
-
-# Password validation
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# PASSWORDS
+# ---------------------------------------------------------------------
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -118,30 +122,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# INTERNATIONALIZATION
+# ---------------------------------------------------------------------
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# STATIC
+# ---------------------------------------------------------------------
 STATIC_URL = "static/"
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+# ---------------------------------------------------------------------
 # DRF / JWT
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -156,11 +153,9 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 
-
+# ---------------------------------------------------------------------
 # CORS / CSRF
-# -------------------------------------------------------------------------
-
-# Para el TP dejamos todo abierto (sino CORS jode con Vercel)
+# ---------------------------------------------------------------------
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
@@ -168,10 +163,9 @@ CSRF_TRUSTED_ORIGINS = [
     "https://scuffers-ecommerce-proyecto-final-u.vercel.app",
 ]
 
-
-# Email
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# EMAIL
+# ---------------------------------------------------------------------
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
@@ -183,10 +177,9 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-
-# Seguridad simplificada (para evitar loops de redirect)
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# SEGURIDAD (TODO APAGADO PARA EVITAR REDIRECTS)
+# ---------------------------------------------------------------------
 SECURE_SSL_REDIRECT = False
 USE_X_FORWARDED_HOST = False
 SECURE_PROXY_SSL_HEADER = None
@@ -194,17 +187,15 @@ SECURE_PROXY_SSL_HEADER = None
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 
-# Evitar redirecciones extra por barra final
-APPEND_SLASH = False
+# Usamos el default de Django (APPEND_SLASH=True) -> NO lo toco
+# APPEND_SLASH = ...
 
-# Protección básica (esto no genera loops)
 X_FRAME_OPTIONS = "DENY"
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
-
-# Logging básico
-# -------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------
+# LOGGING
+# ---------------------------------------------------------------------
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
