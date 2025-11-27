@@ -19,7 +19,7 @@ from .models import (
     Carrito,
     ItemCarrito,
     Cliente,
-    NewsletterSubscriber,  
+    NewsletterSubscriber,   # 👈 IMPORTANTE
 )
 from .serializers import (
     ProductoSerializer,
@@ -52,7 +52,7 @@ class ProductListView(generics.ListAPIView):
       - ?search=hoodie
     """
     serializer_class = ProductoSerializer
-    throttle_classes = []  
+    throttle_classes = []  # 👈 desactiva rate limit para esta vista
 
     def get_queryset(self):
         queryset = Producto.objects.filter(activo=True).order_by("-creado")
@@ -75,7 +75,7 @@ class ProductDetailView(generics.RetrieveAPIView):
     """
     queryset = Producto.objects.filter(activo=True)
     serializer_class = ProductoSerializer
-    lookup_field = "slug"      
+    lookup_field = "slug"      # 👈 clave: usamos el slug, no el id
 
 # ---------- AUTH ----------
 
@@ -262,7 +262,7 @@ class CartAddItemView(APIView):
         item, created = ItemCarrito.objects.get_or_create(
             carrito=carrito,
             producto=producto,
-            talle=size,               
+            talle=size,               # 👈 campo del modelo
             defaults={"cantidad": quantity},
         )
 

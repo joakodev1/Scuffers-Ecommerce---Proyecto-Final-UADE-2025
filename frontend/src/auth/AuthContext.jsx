@@ -9,6 +9,7 @@ export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // helper para setear / limpiar el header Authorization
   function setAuthToken(token) {
     if (token) {
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -28,7 +29,7 @@ export function AuthProvider({ children }) {
   async function loginWithEmail(email, password) {
     try {
       const res = await api.post("/auth/login/", {
-        username: email, 
+        username: email, // 👈 la mayoría de backends DRF esperan "username"
         password,
       });
 

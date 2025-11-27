@@ -132,6 +132,7 @@ export default function Register() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 w-full max-w-5xl"
       >
+        {/* items-center para que las tarjetas no se estiren de más */}
         <div className="grid gap-8 md:grid-cols-[1.15fr,1fr] items-center">
           {/* PANEL IZQUIERDO */}
           <motion.div

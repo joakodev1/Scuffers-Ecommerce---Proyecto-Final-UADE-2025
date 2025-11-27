@@ -13,7 +13,7 @@ export default function ForgotPassword() {
     if (!email.trim()) return;
 
     setLoading(true);
-
+    // 👇 Por ahora simulamos un llamado al backend
     setTimeout(() => {
       setSent(true);
       setLoading(false);

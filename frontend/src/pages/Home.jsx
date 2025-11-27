@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Hero from "../components/Hero.jsx";
 import { fetchProducts } from "../api/products.js";
 import { CATEGORY_LABELS } from "../data/products.js";
+import Newsletter from "../components/Newsletter.jsx";
 
 function FeaturedProductsSection() {
   const [products, setProducts] = useState([]);
@@ -156,6 +157,7 @@ export default function Home() {
     <main className="bg-slate-50 min-h-screen">
       <Hero />
       <FeaturedProductsSection />
+      <Newsletter />
     </main>
   );
 }

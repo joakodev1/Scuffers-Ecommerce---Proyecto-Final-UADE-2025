@@ -11,6 +11,7 @@ export default function Hero() {
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+  // typewriter
   useEffect(() => {
     const current = phrases[phraseIndex];
     const speed = isDeleting ? 40 : 85;

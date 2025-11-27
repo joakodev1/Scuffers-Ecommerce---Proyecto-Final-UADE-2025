@@ -20,6 +20,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 export default function App() {
   return (
     <>
+      {/* 🔝 Siempre que cambie la ruta, sube al top */}
       <ScrollToTop />
 
       <Routes>

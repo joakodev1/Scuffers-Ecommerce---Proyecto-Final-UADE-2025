@@ -37,7 +37,7 @@ export async function removeFromCart(productSlug, quantity = 1, size = null) {
   return res.data;
 }
 
-
+// Helper por si querés restar solo 1
 export async function removeOneFromCart(productSlug, size = null) {
   return removeFromCart(productSlug, 1, size);
 }

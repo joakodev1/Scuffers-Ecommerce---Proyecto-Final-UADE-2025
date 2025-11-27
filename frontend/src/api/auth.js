@@ -1,5 +1,5 @@
 // src/api/auth.js
-import api from "./api.js";
+import api from "./api.js"; // tu instancia vieja con baseURL http://127.0.0.1:8000/api
 
 export async function loginWithEmail(email, password) {
   const res = await api.post("/auth/login/", {
@@ -20,5 +20,6 @@ export async function registerWithEmail(name, email, password) {
 }
 
 export function logoutUser() {
+  // por ahora solo limpiamos storage del lado del front
   return Promise.resolve();
 }
