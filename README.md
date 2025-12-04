@@ -1,234 +1,113 @@
-🛍️ Scuffers E-Commerce
+Scuffers – E-Commerce | Proyecto Final UADE 2025
 
-Proyecto Final – Carrera Ingeniería / Desarrollo Web – Año 2025
+Scuffers es una plataforma de comercio electrónico desarrollada como proyecto final para la carrera de Administración / Desarrollo Web.
+El sistema incluye un backend en Django REST Framework y un frontend en React + Vite + Tailwind, con integración de pagos mediante Mercado Pago.
+El objetivo del proyecto es simular el flujo completo de una tienda de ropa real: autenticación, manejo de carrito, generación de pedidos y procesamiento de pagos.
 
-Scuffers E-Commerce es una plataforma completa de comercio electrónico desarrollada como trabajo final universitario.
-Incluye un frontend moderno en React + Vite, y un backend robusto en Django REST Framework, con autenticación, catálogo, carrito persistente, contacto con envío de emails y base de datos relacional.
+🚀 Tecnologías principales
+Backend (Django + DRF)
 
-🚀 Características principales
-🔐 Autenticación
-
-Registro e inicio de sesión con JWT (SimpleJWT)
-
-Protección de rutas del frontend
-
-Integración de tokens persistentes
-
-🛒 Carrito de compras
-
-Carrito persistente por usuario autenticado
-
-Añadir / quitar / eliminar productos
-
-Cálculo automático de subtotales y total general
-
-Popup de compra simulada
-
-🛍️ Catálogo de productos
-
-Productos cargados desde el backend con imágenes
-
-Filtros por categoría
-
-Búsqueda por texto
-
-Vista detallada de cada producto
-
-Cambio de talles
-
-✉️ Formulario de contacto
-
-Envío de emails mediante servidor SMTP
-
-Variables de entorno para proteger credenciales
-
-🗄️ Base de datos
-
-MySQL (modo desarrollo o producción)
-
-Migraciones automatizadas con Django
-
-🔐 Seguridad
-
-Uso completo de .env tanto en frontend como backend
-
-Deshabilitación del DEBUG en producción
-
-CORS configurado correctamente
-
-Secret keys protegidas
-
-🧩 Tecnologías utilizadas
-🎨 Frontend
-
-React 18
-
-Vite
-
-Tailwind CSS
-
-Framer Motion (animaciones)
-
-React Router DOM
-
-Lucide Icons
-
-⚙️ Backend
-
-Python 3.13
+Python 3.12
 
 Django 5
 
 Django REST Framework
 
-SimpleJWT (auth)
+MySQL (Railway)
 
-MySQL
+Autenticación con JWT (SimpleJWT)
 
-python-dotenv
+Integración de pagos con Mercado Pago
 
-SMTP Gmail (contraseña de aplicación)
+Webhooks de Mercado Pago (para actualizar el estado del pedido)
 
+Gestión de categorías, productos, stock y carrito
 
+Endpoints REST para: productos, usuarios, carrito, checkout y pedidos
 
-📂 Estructura del proyecto
-ProyectoFinal/
-│
-├── backend/
-│   ├── scuffers_api/
-│   ├── shop/
-│   ├── media/
-│   ├── .env                ← No se sube al repo
-│   ├── manage.py
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── .env                ← No se sube al repo
-│   └── package.json
-│
-└── README.md
+Deploy en Railway
 
+Frontend (React)
 
-⚙️ Instalación y configuración
+React + Vite
 
-A continuación se muestra el procedimiento general, sin incluir datos sensibles.
-Cada desarrollador deberá definir sus propias credenciales.
+TailwindCSS
 
-🖥️ 1. Backend (Django + MySQL)
-1.1 Crear entorno virtual
+React Router DOM
 
-Windows:
+Axios
 
-cd backend
-python -m venv venv
-venv\Scripts\activate
+Context API para Auth y Cart
 
+Animaciones con Framer Motion
 
-Linux/Mac:
+Formulario Contact + Newsletter
 
-cd backend
-python3 -m venv venv
-source venv/bin/activate
+Páginas protegidas (My Account, My Orders, Order Detail)
 
-1.2 Instalar dependencias
-pip install -r requirements.txt
+Deploy en Vercel
 
+📦 Características del proyecto
+🛍️ Catálogo de productos
 
-1.3 Crear base de datos MySQL
+Listado completo (Shop All)
 
-Ejemplo genérico:
+Filtros por categorías
 
-CREATE DATABASE scuffers_api_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'scuffers_user'@'localhost' IDENTIFIED BY 'tu_password';
-GRANT ALL PRIVILEGES ON scuffers_api_db.* TO 'scuffers_user'@'localhost';
-FLUSH PRIVILEGES;
+Vista de detalle con imágenes, stock y descripción
 
-1.4 Crear archivo .env (no se sube al repo)
-SECRET_KEY=tu_secret_key
-DEBUG=True
+URL dinámicas con slugs
 
-DB_NAME=scuffers_api_db
-DB_USER=scuffers_user
-DB_PASSWORD=tu_password
-DB_HOST=127.0.0.1
-DB_PORT=3306
+🛒 Carrito de compras
 
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=tu_email
-EMAIL_HOST_PASSWORD=tu_contraseña_app
+Carrito persistente asociado al usuario autenticado
 
-FRONTEND_ORIGIN=http://localhost:5173
+Agregar, quitar y actualizar cantidades
 
-1.5 Migraciones + superusuario
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+Precio total en tiempo real
 
+🔐 Autenticación
 
-Backend disponible en:
+Registro
 
-http://127.0.0.1:8000/
+Login con JWT
 
-🎨 2. Frontend (React + Vite)
-2.1 Instalar dependencias
-cd frontend
-npm install
+/auth/me para recuperar el usuario actual
 
-2.2 Crear archivo .env (Vite)
-VITE_API_URL=http://127.0.0.1:8000/api
+Asociación automática del Cliente → User
 
-2.3 Iniciar servidor
-npm run dev
+💳 Checkout + Mercado Pago
 
+Creación de pedido a partir del carrito
 
-Frontend disponible en:
+Generación de Preferencia de Pago vía API
 
-http://localhost:5173
+Redirección segura a Mercado Pago
 
+Manejo de estados: pending, paid, cancelled
 
-🌐 Deploy en la nube (próximos pasos)
+Actualización automática mediante Webhook
 
-El proyecto está preparado para deployar en:
+Vista de resultados: success / failure / pending
 
-Vercel / Netlify → Frontend
+📦 Pedidos
 
-Railway / Render / PythonAnywhere / DigitalOcean → Backend Django
+Página "My Orders" con listado
 
-MySQL en Railway / PlanetScale / Aiven / DigitalOcean
+"Order Detail" con estado del pago y envío
 
-Se recomienda:
+Solo se muestran pedidos con estado paid en el admin
 
-Modo producción (DEBUG=False)
+💬 Contacto
 
-SECRET_KEY regenerada
+Formulario con validaciones
 
-CORS configurado
+Envío al backend (ContactView)
 
-Certificado SSL
+Guardado del mensaje
 
-Email SMTP real
+📰 Newsletter
 
-.env cargados en el panel de la plataforma
+Suscripción por email
 
-Si querés, te preparo el paso a paso exacto para desplegar en:
-
-Railway
-
-Render
-
-PythonAnywhere
-
-DigitalOcean
-Vos elegís.
-
-🤝 Autores
-
-Joaquin Carricondo – Desarrollo completo del proyecto (Frontend + Backend)
-
-📄 Licencia
-
-Proyecto de uso académico. Permitida la revisión y presentación en contextos educativos.
+Guardado en base de datos

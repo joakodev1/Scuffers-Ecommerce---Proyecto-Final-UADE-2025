@@ -16,7 +16,7 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 
 WHITENOISE_USE_FINDERS = True
-WHITENOISE_AUTOREFRESH = True if ENV == 'development' else False
+WHITENOISE_AUTOREFRESH = False if ENV == 'development' else False
 WHITENOISE_MANIFEST_STRICT = False
 
 # --- STATIC / MEDIA ---
