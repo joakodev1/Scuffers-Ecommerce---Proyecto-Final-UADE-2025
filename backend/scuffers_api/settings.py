@@ -15,8 +15,10 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # URL del frontend (Vite en local, Vercel en prod)
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 
-WHITENOISE_USE_FINDERS = True
-WHITENOISE_AUTOREFRESH = False if ENV == 'development' else False
+ENV = os.environ.get("DJANGO_ENV", "development")
+
+WHITENOISE_AUTOREFRESH = ENV == "development"
+WHITENOISE_USE_FINDERS = ENV == "development"
 WHITENOISE_MANIFEST_STRICT = False
 
 # --- STATIC / MEDIA ---
