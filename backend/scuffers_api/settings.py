@@ -35,7 +35,10 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
+    # backend del proyecto
     "shop.apps.ShopConfig",
+    # backend de email con SendGrid
+    "sendgrid_backend",
 ]
 
 # --- MIDDLEWARE ---
@@ -150,18 +153,24 @@ CSRF_TRUSTED_ORIGINS = [
     FRONTEND_ORIGIN,
 ]
 
-# --- EMAIL ---
+# --- EMAIL (SENDGRID) ---
 
-EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True") == "True"
+# API key definida en Railway / .env
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+# Email que aparece como remitente (tiene que estar verificado en SendGrid)
+DEFAULT_FROM_EMAIL = os.getenv(
+    "DEFAULT_FROM_EMAIL",
+    "scuffersuade@gmail.com",  # el que verificaste como Single Sender
+)
 
-# Siempre SMTP (tanto en DEBUG como en producción)
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# Backend de email usando SendGrid (no usa SMTP bloqueado por Railway)
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+# Config extra recomendada
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+SENDGRID_TRACK_EMAIL_OPENS = False
+SENDGRID_ECHO_TO_STDOUT = DEBUG  # en local ves el JSON en consola
 
 # --- SEGURIDAD EXTRA EN PRODUCCIÓN ---
 
