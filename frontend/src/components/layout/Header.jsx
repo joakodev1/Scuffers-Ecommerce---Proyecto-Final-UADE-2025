@@ -1,17 +1,17 @@
 // src/components/layout/Header.jsx
-import { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Menu, X, ShoppingBag } from "lucide-react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useAuth } from "../../auth/AuthContext.jsx";
 import { useCart } from "../../cart/CartContext.jsx";
 
 const MotionLink = motion(Link);
 
+// Rutas principales (sin Categories, que va aparte)
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/shop", label: "Shop All" },
-  { to: "/shop", label: "Categories" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -22,62 +22,84 @@ const announcements = [
   "3 CUOTAS SIN INTERES",
   "ENVIO GRATIS SUPERANDO LOS $150.000",
   "20% OFF VIA TRANSFERENCIA",
-  "3 CUOTAS SIN INTERES",
-  "ENVIO GRATIS SUPERANDO LOS $150.000",
-  "20% OFF VIA TRANSFERENCIA",
 ];
 
+// Tus categorías reales
 const categoryLinks = [
   { label: "Camperas / Buzos", to: "/shop?cat=hoodies" },
-  { label: "Pantalones", to: "/shop?cat=abrigos" },
-  { label: "Remeras", to: "/shop?cat=camisas" },
-  { label: "Accesorios", to: "/shop?cat=carteras" },
+  { label: "Pantalones", to: "/shop?cat=pants" },
+  { label: "Remeras", to: "/shop?cat=tees" },
+  { label: "Accesorios", to: "/shop?cat=accessories" },
 ];
+
+// logos en /public
+const LOGO_LIGHT = "/logolight.png"; // blanco para arriba del hero
+const LOGO_DARK = "/logoremove.png"; // negro para header blanco
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [headerPhase, setHeaderPhase] = useState("large"); // large | compactHero | scrolled
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { scrollY } = useScroll();
-  const { isAuthenticated, logout, loading } = useAuth();
+  const { isAuthenticated, logout, loading, user } = useAuth(); // 👈 agregamos user
   const { totalItems } = useCart();
 
-  function handleSearchSubmit(e) {
-    e.preventDefault();
-    if (!searchTerm.trim()) return;
-    navigate(`/shop?search=${encodeURIComponent(searchTerm.trim())}`);
-    setSearchOpen(false);
-  }
+  const isHome = location.pathname === "/";
 
-  // 🔽 Animaciones con scroll
+  // --- fases de header según scroll (sólo en Home) ---
+  useEffect(() => {
+    if (!isHome) {
+      setHeaderPhase("scrolled");
+      return;
+    }
+
+    function handleScroll() {
+      const y = window.scrollY || 0;
+
+      if (y < 40) {
+        setHeaderPhase("large"); // top del hero
+      } else if (y < 260) {
+        setHeaderPhase("compactHero"); // un poco de scroll, todavía en hero
+      } else {
+        setHeaderPhase("scrolled"); // ya saliste del hero
+      }
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHome]);
+
+  const effectivePhase = isHome ? headerPhase : "scrolled";
+  const isScrolled = effectivePhase === "scrolled";
+
+  // sombra suave cuando se scrollea
   const boxShadow = useTransform(
     scrollY,
-    [0, 80],
-    ["0 0 0 rgba(15,23,42,0)", "0 18px 45px rgba(15,23,42,0.16)"]
+    [0, 120],
+    ["0 0 0 rgba(0,0,0,0)", "0 12px 30px rgba(15,23,42,0.18)"]
   );
 
-  const bgColor = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(248,250,252,0)", "rgba(248,250,252,0.98)"]
-  );
-
-  const borderColor = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(148,163,184,0)", "rgba(148,163,184,0.7)"]
-  );
+  // logo según fase
+  const logoSrc =
+    effectivePhase === "large" || effectivePhase === "compactHero"
+      ? LOGO_LIGHT
+      : LOGO_DARK;
 
   return (
     <motion.header
-      style={{ boxShadow, backgroundColor: bgColor, borderColor }}
-      className="fixed inset-x-0 top-0 z-40 border-b backdrop-blur-xl"
+      style={{ boxShadow }}
+      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+        isScrolled
+          ? "bg-white/95 border-b border-slate-200"
+          : "bg-transparent border-b border-transparent"
+      }`}
     >
-      {/* BARRA PROMO */}
-      <div className="w-full bg-sky-800 text-[10px] sm:text-xs text-slate-50 border-b border-sky-800/40 overflow-hidden">
+      {/* BARRA PROMO ARRIBA */}
+      <div className="w-full bg-sky-900 text-[10px] sm:text-xs text-slate-50 border-b border-sky-800/40 overflow-hidden">
         <motion.div
           className="flex items-center gap-8 whitespace-nowrap py-1"
           initial={{ x: 0 }}
@@ -106,96 +128,114 @@ export default function Header() {
       </div>
 
       {/* HEADER PRINCIPAL */}
-      <div className="relative h-16 w-full flex items-center px-6">
+      <div
+        className={`relative w-full flex items-center px-4 sm:px-6 transition-all duration-300 ${
+          effectivePhase === "large" ? "h-20" : "h-16"
+        }`}
+      >
+        {/* IZQUIERDA DESKTOP: Categories + nav */}
+        <div className="hidden md:flex flex-1 items-center justify-start gap-4">
+          {/* BOTÓN CATEGORIES */}
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setCategoriesOpen((v) => !v)}
+              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs md:text-sm font-medium transition-colors border ${
+                isScrolled
+                  ? "bg-white text-slate-800 border-slate-200 hover:bg-slate-100"
+                  : "bg-black/35 text-slate-50 border-white/30 hover:bg-black/45"
+              }`}
+            >
+              <span>Categories</span>
+              <span className="text-[10px]">{categoriesOpen ? "▲" : "▼"}</span>
+            </button>
 
-        {/* NAV DESKTOP */}
-        <div className="hidden md:flex flex-1 items-center justify-start">
-          <nav className="inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 shadow-sm ring-1 ring-slate-200/80">
-            {navItems.map((item) =>
-              item.label === "Categories" ? (
-                <button
-                  key="categories-desktop"
-                  type="button"
-                  onClick={() => setCategoriesOpen((v) => !v)}
-                  className={`relative px-4 py-1 text-sm rounded-full transition-colors ${
-                    categoriesOpen
-                      ? "text-slate-900 bg-slate-100/80"
-                      : "text-slate-500 hover:text-slate-900 hover:bg-slate-100/80"
-                  }`}
+            {/* DROPDOWN DESKTOP */}
+            <AnimatePresence>
+              {categoriesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 6, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.98 }}
+                  transition={{ duration: 0.18 }}
+                  className="absolute left-0 mt-1 w-64 rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 overflow-hidden z-50"
                 >
-                  <span className="inline-flex flex-col items-center">
-                    <span>Categories</span>
-                    {categoriesOpen && (
-                      <span className="mt-0.5 h-1 w-1 rounded-full bg-slate-900" />
-                    )}
-                  </span>
-                </button>
-              ) : (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    `relative px-4 py-1 text-sm rounded-full transition-colors ${
-                      isActive
-                        ? "text-slate-900"
-                        : "text-slate-500 hover:text-slate-900 hover:bg-slate-100/80"
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              )
-            )}
+                  {categoryLinks.map((cat, idx) => (
+                    <Link
+                      key={cat.label}
+                      to={cat.to}
+                      onClick={() => setCategoriesOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 text-sm hover:bg-slate-50 ${
+                        idx !== categoryLinks.length - 1
+                          ? "border-b border-slate-100"
+                          : ""
+                      }`}
+                    >
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/5 text-[11px] font-semibold text-slate-700">
+                        {cat.label[0]}
+                      </span>
+                      <span className="text-slate-800">{cat.label}</span>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* NAV LINKS */}
+          <nav className="inline-flex items-center gap-1 rounded-full bg-black/5 px-3 py-1 shadow-sm">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  `relative px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-medium transition-colors ${
+                    isScrolled
+                      ? isActive
+                        ? "bg-slate-100 text-slate-900"
+                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      : isActive
+                      ? "bg-black/40 text-white"
+                      : "text-slate-100/90 hover:bg-black/40 hover:text-white"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
           </nav>
         </div>
 
-        {/* LOGO */}
+        {/* LOGO CENTRADO */}
         <Link
           to="/"
           className="absolute left-1/2 -translate-x-1/2 flex items-center"
         >
-          <motion.div
-            className="flex items-center gap-2 md:gap-3"
+          <motion.img
+            src={logoSrc}
+            alt="Scuffers"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <motion.div
-              whileHover={{ rotate: -3, scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-slate-200 p-1.5"
-            >
-              <img
-                src="/smile.png"
-                alt="Scuffers Logo"
-                className="h-9 w-9 md:h-10 md:w-10 object-contain"
-              />
-            </motion.div>
-
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span className="text-base md:text-lg font-semibold tracking-tight text-slate-900">
-                Scuffers
-              </span>
-              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-slate-400">
-                Streetwear
-              </span>
-            </div>
-          </motion.div>
+            whileHover={{ scale: 1.03 }}
+            className={`h-8 sm:h-9 md:h-10 w-auto object-contain drop-shadow-md ${
+              isScrolled ? "brightness-100" : "brightness-110"
+            } ${
+              effectivePhase === "large" ? "scale-100" : "scale-95"
+            } transition-transform`}
+          />
         </Link>
 
-        {/* ICONOS */}
+        {/* DERECHA DESKTOP: carrito + auth (+ admin) */}
         <div className="hidden md:flex flex-1 items-center justify-end gap-3">
-          <button
-            onClick={() => setSearchOpen((v) => !v)}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
-          >
-            <Search size={16} />
-          </button>
-
+          {/* CARRITO */}
           <Link
             to="/cart"
-            className="relative inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+            className={`relative inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs transition-colors ${
+              isScrolled
+                ? "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+                : "border-white/30 bg-black/35 text-slate-50 hover:bg-black/45"
+            }`}
           >
             <ShoppingBag size={16} />
             {totalItems > 0 && (
@@ -205,13 +245,28 @@ export default function Header() {
             )}
           </Link>
 
+          {/* AUTH */}
           {!loading && (
             <>
               {isAuthenticated ? (
                 <>
+                  {/* 👑 Admin desktop - solo staff */}
+                  {user?.is_staff && (
+                    <Link
+                      to="/dashboard"
+                      className="px-3 py-1 text-xs md:text-sm rounded-full bg-amber-500 text-white hover:bg-amber-600 font-medium"
+                    >
+                      Admin
+                    </Link>
+                  )}
+
                   <Link
                     to="/mi-cuenta"
-                    className="px-3 py-1 text-sm text-slate-700 rounded-full border border-slate-200 bg-white hover:bg-slate-100"
+                    className={`px-3 py-1 text-xs md:text-sm rounded-full border transition-colors ${
+                      isScrolled
+                        ? "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+                        : "border-white/30 bg-black/35 text-slate-50 hover:bg-black/45"
+                    }`}
                   >
                     Mi cuenta
                   </Link>
@@ -223,7 +278,7 @@ export default function Header() {
                       logout();
                       navigate("/");
                     }}
-                    className="px-4 py-1 text-sm font-medium rounded-full bg-slate-900 text-white hover:bg-slate-800"
+                    className="px-4 py-1 text-xs md:text-sm font-medium rounded-full bg-slate-900 text-white hover:bg-slate-800"
                   >
                     Cerrar sesión
                   </motion.button>
@@ -234,7 +289,11 @@ export default function Header() {
                     <motion.button
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className="px-3 py-1 text-sm text-slate-700 rounded-full border border-slate-200 bg-white hover:bg-slate-100"
+                      className={`px-3 py-1 text-xs md:text-sm rounded-full border transition-colors ${
+                        isScrolled
+                          ? "border-slate-200 bg-white text-slate-700 hover:bg-slate-100"
+                          : "border-white/30 bg-black/35 text-slate-50 hover:bg-black/45"
+                      }`}
                     >
                       Log in
                     </motion.button>
@@ -244,7 +303,7 @@ export default function Header() {
                     to="/register"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.96 }}
-                    className="px-4 py-1 text-sm font-medium rounded-full bg-slate-900 text-white hover:bg-slate-800"
+                    className="px-4 py-1 text-xs md:text-sm font-medium rounded-full bg-slate-900 text-white hover:bg-slate-800"
                   >
                     Register
                   </MotionLink>
@@ -254,7 +313,7 @@ export default function Header() {
           )}
         </div>
 
-        {/* ICONO MOBILE */}
+        {/* BOTÓN MENU MOBILE */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
           className="md:hidden ml-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-800"
@@ -263,85 +322,62 @@ export default function Header() {
         </button>
       </div>
 
-      {/* BARRA CATEGORIAS DESKTOP */}
-      <div
-        className={`hidden md:block bg-white shadow-sm overflow-hidden transition-[max-height,opacity] duration-180 ease-out ${
-          categoriesOpen ? "max-h-11 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto flex justify-between px-4 py-3 text-xs md:text-sm text-slate-800">
-          {categoryLinks.map((cat) => (
-            <Link
-              key={cat.label}
-              to={cat.to}
-              className="hover:text-slate-900 hover:underline underline-offset-4"
-            >
-              {cat.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* NAV MOBILE — ARREGLADO */}
+      {/* NAV MOBILE */}
       {mobileOpen && (
         <motion.nav
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden px-4 pb-4"
+          className="md:hidden px-4 pb-4 bg-white/95"
         >
-          <div className="rounded-2xl bg-white/95 ring-1 ring-slate-200 shadow-md p-3 space-y-1">
+          <div className="rounded-2xl bg-white ring-1 ring-slate-200 shadow-md p-3 space-y-1">
+            {/* Categories en mobile */}
+            <div className="space-y-1">
+              <button
+                onClick={() => setCategoriesOpen((v) => !v)}
+                className={`w-full block rounded-xl px-3 py-2 text-sm text-left ${
+                  categoriesOpen
+                    ? "bg-slate-900 text-white"
+                    : "text-slate-600 hover:bg-slate-100"
+                }`}
+              >
+                Categories
+              </button>
 
-            {navItems.map((item) =>
-              item.label === "Categories" ? (
-                <div key="mobile-categories" className="space-y-1">
-                  
-                  {/* Botón principal */}
-                  <button
-                    onClick={() => setCategoriesOpen((v) => !v)}
-                    className={`w-full block rounded-xl px-3 py-2 text-sm text-left ${
-                      categoriesOpen
-                        ? "bg-slate-900 text-white"
-                        : "text-slate-600 hover:bg-slate-100"
-                    }`}
-                  >
-                    Categories
-                  </button>
-
-                  {/* Submenú */}
-                  {categoriesOpen && (
-                    <div className="ml-3 space-y-1 border-l border-slate-200 pl-3">
-                      {categoryLinks.map((cat) => (
-                        <Link
-                          key={cat.label}
-                          to={cat.to}
-                          onClick={() => setMobileOpen(false)}
-                          className="block rounded-lg px-2 py-1.5 text-[13px] text-slate-600 hover:bg-slate-100"
-                        >
-                          {cat.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+              {categoriesOpen && (
+                <div className="ml-3 space-y-1 border-l border-slate-200 pl-3">
+                  {categoryLinks.map((cat) => (
+                    <Link
+                      key={cat.label}
+                      to={cat.to}
+                      onClick={() => setMobileOpen(false)}
+                      className="block rounded-lg px-2 py-1.5 text-[13px] text-slate-600 hover:bg-slate-100"
+                    >
+                      {cat.label}
+                    </Link>
+                  ))}
                 </div>
-              ) : (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setMobileOpen(false)}
-                  className={({ isActive }) =>
-                    `block rounded-xl px-3 py-2 text-sm ${
-                      isActive
-                        ? "bg-slate-900 text-white"
-                        : "text-slate-600 hover:bg-slate-100"
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              )
-            )}
+              )}
+            </div>
 
-            {/* Carrito */}
+            {/* Resto de nav items */}
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `block rounded-xl px-3 py-2 text-sm ${
+                    isActive
+                      ? "bg-slate-900 text-white"
+                      : "text-slate-600 hover:bg-slate-100"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
+
+            {/* Carrito mobile */}
             <NavLink
               to="/cart"
               onClick={() => setMobileOpen(false)}
@@ -358,30 +394,43 @@ export default function Header() {
 
             {/* AUTH MOBILE */}
             {!loading && (
-              <div className="pt-2 mt-2 border-t border-slate-200 flex gap-2">
+              <div className="pt-2 mt-2 border-t border-slate-200 space-y-2">
                 {isAuthenticated ? (
                   <>
-                    <Link
-                      to="/mi-cuenta"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 text-center"
-                    >
-                      Mi cuenta
-                    </Link>
+                    {/* 👑 Admin mobile - solo staff */}
+                    {user?.is_staff && (
+                      <Link
+                        to="/dashboard"
+                        onClick={() => setMobileOpen(false)}
+                        className="block w-full rounded-full bg-amber-500 px-3 py-1.5 text-xs font-medium text-white text-center hover:bg-amber-600"
+                      >
+                        Admin
+                      </Link>
+                    )}
 
-                    <button
-                      onClick={() => {
-                        logout();
-                        setMobileOpen(false);
-                        navigate("/");
-                      }}
-                      className="flex-1 rounded-full bg-slate-900 px-3 py-1.5 text-xs font-medium text-white text-center"
-                    >
-                      Cerrar sesión
-                    </button>
+                    <div className="flex gap-2">
+                      <Link
+                        to="/mi-cuenta"
+                        onClick={() => setMobileOpen(false)}
+                        className="flex-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 text-center"
+                      >
+                        Mi cuenta
+                      </Link>
+
+                      <button
+                        onClick={() => {
+                          logout();
+                          setMobileOpen(false);
+                          navigate("/");
+                        }}
+                        className="flex-1 rounded-full bg-slate-900 px-3 py-1.5 text-xs font-medium text-white text-center"
+                      >
+                        Cerrar sesión
+                      </button>
+                    </div>
                   </>
                 ) : (
-                  <>
+                  <div className="flex gap-2">
                     <Link
                       to="/login"
                       onClick={() => setMobileOpen(false)}
@@ -399,7 +448,7 @@ export default function Header() {
                     >
                       Register
                     </MotionLink>
-                  </>
+                  </div>
                 )}
               </div>
             )}

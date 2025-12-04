@@ -6,7 +6,7 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Cada vez que cambia la ruta, volvemos al top
+
     window.scrollTo({
       top: 0,
       left: 0,

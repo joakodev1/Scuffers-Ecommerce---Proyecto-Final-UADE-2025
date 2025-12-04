@@ -1,10 +1,11 @@
 // src/api/products.js
 
-// Base para API REST
-export const API_URL = "http://localhost:8000/api";
+// Base para API REST (con /api)
+export const API_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
 
-// Base para imágenes
-export const API_BASE_URL = "http://localhost:8000";
+// Base para imágenes (sin /api)
+export const API_BASE_URL = API_URL.replace(/\/api\/?$/, "");
 
 // Convierte una ruta de imagen en URL completa
 export function getImageUrl(path) {
@@ -16,10 +17,10 @@ export function getImageUrl(path) {
 // Intenta detectar la propiedad correcta de imagen del objeto que viene del backend
 function extractImagePath(obj = {}) {
   return (
-    obj.imagen ||        // español
-    obj.image ||         // inglés
-    obj.image_url ||     // algunas APIs
-    obj.foto ||          // por las dudas
+    obj.imagen || // español
+    obj.image || // inglés
+    obj.image_url || // algunas APIs
+    obj.foto || // por las dudas
     ""
   );
 }
@@ -57,7 +58,6 @@ export async function fetchProducts({ cat, search } = {}) {
 
 // 🔹 Detalle de producto por slug
 export async function fetchProductBySlug(slug) {
-  // 🔧 limpiamos el slug por las dudas
   const cleanSlug = encodeURIComponent(String(slug || "").split("/")[0].trim());
 
   const url = `${API_URL}/products/${cleanSlug}/`;

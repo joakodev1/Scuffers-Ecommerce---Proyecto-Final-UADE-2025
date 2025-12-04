@@ -39,7 +39,7 @@ export default function Hero() {
   }, [displayed, isDeleting, phraseIndex]);
 
   return (
-    // el hero ocupa todo el alto visible debajo del header
+
     <section className="relative h-[100vh] pt-[7rem] flex items-center overflow-hidden">
       {/* BACKGROUND */}
       <div className="absolute inset-0 z-0">

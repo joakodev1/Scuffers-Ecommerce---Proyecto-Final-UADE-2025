@@ -1,8 +1,16 @@
 # shop/serializers.py
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from rest_framework import serializers
 
-from .models import Producto, ItemCarrito, Carrito, Cliente
+from .models import (
+    Pedido,
+    OrderItem,
+    Producto,
+    ItemCarrito,
+    Carrito,
+    Cliente,
+)
 
 
 # =========================================================
@@ -10,7 +18,27 @@ from .models import Producto, ItemCarrito, Carrito, Cliente
 # =========================================================
 
 class ProductoSerializer(serializers.ModelSerializer):
-    # Array automático para galería
+    """
+    Serializer principal de productos (público y admin).
+
+    El modelo tiene campos:
+      - imagen
+      - imagen_hover
+      - imagen_3
+      - imagen_4
+
+    Además exponemos:
+      - image_url, image_hover_url, image_3_url, image_4_url
+      - images: lista con todas las URLs (para la galería del ProductDetail)
+    """
+
+    # URLs individuales cómodas para el front
+    image_url = serializers.SerializerMethodField()
+    image_hover_url = serializers.SerializerMethodField()
+    image_3_url = serializers.SerializerMethodField()
+    image_4_url = serializers.SerializerMethodField()
+
+    # galería combinada
     images = serializers.SerializerMethodField()
 
     class Meta:
@@ -21,31 +49,87 @@ class ProductoSerializer(serializers.ModelSerializer):
             "slug",
             "precio",
             "categoria",
+            "descripcion",
+            "stock",
             "tag",
-            # imágenes del modelo
-            "image",
-            "image_hover",
-            "image_3",
-            "image_4",
-            # galería auto
+
+            # campos de archivo TAL CUAL en el modelo
+            "imagen",
+            "imagen_hover",
+            "imagen_3",
+            "imagen_4",
+
+            # urls derivadas
+            "image_url",
+            "image_hover_url",
+            "image_3_url",
+            "image_4_url",
+
+            # galería (para ProductDetail / ShopAll)
             "images",
+
             "activo",
         ]
+        extra_kwargs = {
+            "slug": {"required": False, "allow_blank": True},
+        }
 
-    def get_images(self, obj):
-        """Devuelve URLs absolutas de todas las imágenes."""
+    # ---------- helper interno único ----------
+    def _build_url(self, file_field):
+        """
+        Devuelve URL absoluta si hay request en el contexto,
+        si no, devuelve la URL relativa del archivo.
+        """
+        if not file_field:
+            return None
+
         request = self.context.get("request")
+        url = file_field.url
 
-        def build_url(f):
-            if not f:
-                return None
-            url = f.url
-            if request:
-                return request.build_absolute_uri(url)
-            return url
+        if request is not None:
+            return request.build_absolute_uri(url)
+        return url
 
-        # obj.all_images() lo definimos en el modelo
-        return [build_url(f) for f in obj.all_images() if f]
+    # ---------- URLs individuales ----------
+    def get_image_url(self, obj):
+        return self._build_url(obj.imagen)
+
+    def get_image_hover_url(self, obj):
+        return self._build_url(obj.imagen_hover)
+
+    def get_image_3_url(self, obj):
+        return self._build_url(obj.imagen_3)
+
+    def get_image_4_url(self, obj):
+        return self._build_url(obj.imagen_4)
+
+    # ---------- galería ----------
+    def get_images(self, obj):
+        """
+        Devuelve lista de URLs en el orden:
+        [imagen, imagen_hover, imagen_3, imagen_4]
+        Sólo incluye las que existan.
+        """
+        files = [obj.imagen, obj.imagen_hover, obj.imagen_3, obj.imagen_4]
+        urls = []
+
+        for f in files:
+            u = self._build_url(f)
+            if u:
+                urls.append(u)
+
+        return urls
+
+    # ---------- create/update con slug automático ----------
+    def create(self, validated_data):
+        if not validated_data.get("slug") and validated_data.get("nombre"):
+            validated_data["slug"] = slugify(validated_data["nombre"])
+        return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        if not validated_data.get("slug") and validated_data.get("nombre"):
+            validated_data["slug"] = slugify(validated_data["nombre"])
+        return super().update(instance, validated_data)
 
 
 # =========================================================
@@ -126,5 +210,70 @@ class RegisterSerializer(serializers.Serializer):
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ["id", "direccion", "telefono", "fecha_creacion"]
+        fields = [
+            "id",
+            "direccion",
+            "ciudad",
+            "provincia",
+            "codigo_postal",
+            "telefono",
+            "fecha_creacion",
+        ]
         read_only_fields = ["fecha_creacion"]
+
+
+class ClienteAddressSerializer(serializers.ModelSerializer):
+    """
+    Versión simplificada para /me/address/
+    """
+    class Meta:
+        model = Cliente
+        fields = [
+            "direccion",
+            "ciudad",
+            "provincia",
+            "codigo_postal",
+            "telefono",
+        ]
+
+
+# =========================================================
+#                  PEDIDOS / ORDER
+# =========================================================
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OrderItem
+        fields = [
+            "id",
+            "producto",
+            "nombre_producto",
+            "talle",            # 👈 añadido para que el front pueda mostrar el talle
+            "cantidad",
+            "precio_unitario",
+            "subtotal",
+        ]
+
+
+class PedidoDetailSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Pedido
+        fields = [
+            "id",
+            "estado",
+            "email",
+            "nombre",
+            "telefono",
+            "direccion",
+            "ciudad",
+            "provincia",
+            "codigo_postal",
+            "observaciones",
+            "total_productos",
+            "costo_envio",
+            "total_final",
+            "creado",     # 👈 campo real del modelo
+            "items",
+        ]

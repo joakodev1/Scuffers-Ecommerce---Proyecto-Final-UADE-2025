@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // helper para setear / limpiar el header Authorization
+
   function setAuthToken(token) {
     if (token) {
       api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -20,27 +20,35 @@ export function AuthProvider({ children }) {
 
   async function fetchMe() {
     const res = await api.get("/auth/me/");
-    setUser(res.data);
+
+
+    const mappedUser = {
+      ...res.data,
+      is_staff: !!res.data.is_staff,
+      is_superuser: !!res.data.is_superuser,
+    };
+
+    setUser(mappedUser);
     setIsAuthenticated(true);
-    return res.data;
+    return mappedUser;
   }
 
-  // LOGIN POR EMAIL (usamos el email como username para el backend)
+
   async function loginWithEmail(email, password) {
     try {
       const res = await api.post("/auth/login/", {
-        username: email, // 👈 la mayoría de backends DRF esperan "username"
+        username: email,
         password,
       });
 
       const { access, refresh } = res.data;
 
-      // guardar tokens
+
       localStorage.setItem("access", access);
       localStorage.setItem("refresh", refresh);
       setAuthToken(access);
 
-      // obtener datos del usuario logueado
+
       const me = await fetchMe();
       return me;
     } catch (err) {
@@ -49,7 +57,7 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // intentar recuperar sesión al montar la app
+
   useEffect(() => {
     const token = localStorage.getItem("access");
     if (!token) {
@@ -72,16 +80,26 @@ export function AuthProvider({ children }) {
   }, []);
 
   function logout() {
+    setAuthToken(null);
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     setUser(null);
     setIsAuthenticated(false);
-    setAuthToken(null);
   }
+
+ 
+  const isAdmin = !!(user?.is_staff || user?.is_superuser);
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated, loading, loginWithEmail, logout }}
+      value={{
+        user,
+        isAuthenticated,
+        isAdmin,
+        loading,
+        loginWithEmail,
+        logout,
+      }}
     >
       {children}
     </AuthContext.Provider>

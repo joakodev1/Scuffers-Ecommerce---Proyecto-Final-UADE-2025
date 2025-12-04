@@ -35,6 +35,9 @@ export default function Footer() {
     },
   ];
 
+  const LOGO_LIGHT = "/logolight.png";   // blanco para arriba del hero
+const LOGO_DARK = "/logoremove.png";   // negro para header blanco
+
   return (
     <footer className="mt-0 bg-white text-slate-800 border-t border-slate-200">
 
@@ -49,7 +52,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="inline-flex items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-slate-200 p-2">
               <img
-                src="/smile.png"
+                src="/logoremove.png"
                 alt="Scuffers logo"
                 className="h-8 w-8 object-contain"
               />

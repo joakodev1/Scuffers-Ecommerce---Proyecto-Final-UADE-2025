@@ -13,7 +13,7 @@ export default function ForgotPassword() {
     if (!email.trim()) return;
 
     setLoading(true);
-    // 👇 Por ahora simulamos un llamado al backend
+    // 
     setTimeout(() => {
       setSent(true);
       setLoading(false);
@@ -22,7 +22,7 @@ export default function ForgotPassword() {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-slate-100 flex items-center justify-center px-4">
-      {/* Auras de fondo */}
+
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 0.7, scale: 1 }}

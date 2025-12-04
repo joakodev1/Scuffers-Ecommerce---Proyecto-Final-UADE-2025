@@ -7,9 +7,79 @@ import { useAuth } from "../auth/AuthContext.jsx";
 import { useCart } from "../cart/CartContext.jsx";
 import { getImageUrl } from "../api/products.js";
 
+// 🔐 Detecta si un string "parece" un JWT (tres partes separadas por puntos)
+function looksLikeJwt(token) {
+  if (!token || typeof token !== "string") return false;
+  const parts = token.split(".");
+  return parts.length === 3 && !token.includes(" ");
+}
+
+// 🔐 Helper para encontrar el JWT en localStorage
+function getJwtToken() {
+  // 1) Keys típicas directas
+  const directKeys = ["access_token", "accessToken", "token"];
+  for (const key of directKeys) {
+    const value = localStorage.getItem(key);
+    if (looksLikeJwt(value)) {
+      console.log("[checkout] JWT encontrado en key directa:", key);
+      return value;
+    }
+  }
+
+  // 2) Keys típicas con JSON { access, refresh, ... }
+  const jsonKeys = [
+    "authTokens",
+    "auth_tokens",
+    "auth",
+    "user",
+    "scuffers_auth",
+  ];
+  for (const key of jsonKeys) {
+    const raw = localStorage.getItem(key);
+    if (!raw) continue;
+    try {
+      const parsed = JSON.parse(raw);
+      const cand = parsed.access || parsed.access_token || parsed.token;
+      if (looksLikeJwt(cand)) {
+        console.log("[checkout] JWT encontrado en JSON key:", key);
+        return cand;
+      }
+    } catch {
+      // ignoramos parseos fallidos
+    }
+  }
+
+  // 3) Heurística general: revisar TODAS las keys de localStorage
+  for (const key of Object.keys(localStorage)) {
+    const raw = localStorage.getItem(key);
+
+    if (looksLikeJwt(raw)) {
+      console.log("[checkout] JWT encontrado por heurística (string) en key:", key);
+      return raw;
+    }
+
+    try {
+      const parsed = JSON.parse(raw);
+      const cand = parsed?.access || parsed?.access_token || parsed?.token;
+      if (looksLikeJwt(cand)) {
+        console.log(
+          "[checkout] JWT encontrado por heurística (JSON) en key:",
+          key
+        );
+        return cand;
+      }
+    } catch {
+      // no era JSON, seguimos
+    }
+  }
+
+  console.warn("[checkout] No se encontró JWT en localStorage. Keys:", Object.keys(localStorage));
+  return "";
+}
+
 export default function Cart() {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth(); // ya no intento accessToken del contexto
 
   const {
     cart,
@@ -21,7 +91,6 @@ export default function Cart() {
     totalItems,
   } = useCart();
 
-  const [showSuccess, setShowSuccess] = useState(false);
   const [checkingOut, setCheckingOut] = useState(false);
 
   // Cargar carrito al entrar
@@ -56,14 +125,14 @@ export default function Cart() {
   }
 
   function getItemProduct(item) {
-    // con el nuevo serializer viene en "producto"
+
     return item.producto || item.product || {};
   }
 
   function getItemImageSrc(item) {
     const p = getItemProduct(item);
 
-    // Primero probamos con la galería (images), después con image
+
     const raw =
       (Array.isArray(p.images) && p.images[0]) ||
       p.image ||
@@ -92,14 +161,14 @@ export default function Cart() {
   }
 
   function getItemSubtotal(item) {
-    // ✅ usamos el subtotal que manda el backend
+
     if (item.subtotal != null) {
       return Number(item.subtotal);
     }
     return getItemPrice(item) * Number(item.cantidad ?? 1);
   }
 
-  // Acciones de botones +, -, Eliminar
+
   async function handlePlus(item) {
     const slug = getItemSlug(item);
     if (!slug) return;
@@ -122,27 +191,123 @@ export default function Cart() {
     await removeFromCart(slug, qty, size);
   }
 
-  // 🔐 lógica de "pagar" (checkout falso con popup)
-  async function handleCheckout() {
-    // Por las dudas, chequeamos de nuevo
-    if (totalItems === 0 || items.length === 0 || checkingOut || updating) {
+  async function handleMercadoPagoCheckout() {
+    if (
+      totalItems === 0 ||
+      items.length === 0 ||
+      checkingOut ||
+      updating
+    ) {
       return;
     }
 
     try {
       setCheckingOut(true);
 
-      // Simulamos la compra vaciando el carrito
-      for (const item of items) {
-        const slug = getItemSlug(item);
-        if (!slug) continue;
-        const size = getItemSize(item);
-        const qty = Number(item.cantidad ?? 1);
-        await removeFromCart(slug, qty, size);
+      const token = getJwtToken();
+
+      if (!token) {
+        alert(
+          "No se encontró tu sesión de usuario en el navegador. Volvé a iniciar sesión para poder pagar."
+        );
+        return;
       }
 
-      // Mostramos el popup de éxito
-      setShowSuccess(true);
+      const API_BASE_URL =
+        import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+
+      // 1) Crear pedido desde el carrito
+      const createRes = await fetch(
+        `${API_BASE_URL}/api/checkout/create-order/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({}),
+        }
+      );
+
+      if (!createRes.ok) {
+        const err = await createRes.json().catch(() => ({}));
+        console.error("Error al crear pedido", err);
+        alert("No se pudo crear el pedido. Intentá de nuevo.");
+        return;
+      }
+
+      const pedido = await createRes.json();
+      const orderId = pedido.id;
+
+      // 2) Confirmar envío (por ahora datos dummy)
+      const shippingPayload = {
+        order_id: orderId,
+        direccion: "A coordinar",
+        ciudad: "Rosario",
+        provincia: "Santa Fe",
+        codigo_postal: "2000",
+        costo_envio: 0,
+        observaciones: "",
+      };
+
+      const shippingRes = await fetch(
+        `${API_BASE_URL}/api/checkout/confirm-shipping/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(shippingPayload),
+        }
+      );
+
+      if (!shippingRes.ok) {
+        const err = await shippingRes.json().catch(() => ({}));
+        console.error("Error al confirmar envío", err);
+        alert("No se pudo confirmar el envío.");
+        return;
+      }
+
+      // 3) Crear preferencia de Mercado Pago
+      const mpRes = await fetch(
+        `${API_BASE_URL}/api/checkout/mercadopago/preference/${orderId}/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({}),
+        }
+      );
+
+      if (!mpRes.ok) {
+  const err = await mpRes.json().catch(() => ({}));
+  console.error("Error al crear preferencia MP", err);
+
+  const mpMsg =
+    err?.mp_error?.message ||
+    err?.detail ||
+    "No se pudo iniciar el pago con Mercado Pago.";
+
+  alert(`Error de Mercado Pago: ${mpMsg}`);
+  return;
+}
+
+      const mpData = await mpRes.json();
+
+      if (!mpData.init_point) {
+        console.error("Respuesta de MP inesperada:", mpData);
+        alert("No se recibió el link de pago de Mercado Pago.");
+        return;
+      }
+
+      // 4) Redirigir a Mercado Pago
+      window.location.href = mpData.init_point;
+    } catch (e) {
+      console.error(e);
+      alert("Ocurrió un error inesperado al iniciar el pago.");
     } finally {
       setCheckingOut(false);
     }
@@ -191,7 +356,6 @@ export default function Cart() {
 
           <div className="space-y-4">
             {items.map((item, index) => {
-              // ✅ ahora cada item tiene id; usamos eso como key
               const idKey =
                 item.id ||
                 `${getItemSlug(item) || "item"}-${
@@ -241,10 +405,12 @@ export default function Cart() {
                       )}
                     </div>
 
-                    {/* Cantidad + Eliminar (reordenado) */}
+                    {/* Cantidad + Eliminar */}
                     <div className="flex flex-col items-start gap-1 mt-1">
                       <div className="inline-flex items-center gap-2">
-                        <span className="text-xs text-slate-500">Cantidad:</span>
+                        <span className="text-xs text-slate-500">
+                          Cantidad:
+                        </span>
                         <div className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50">
                           <button
                             type="button"
@@ -323,58 +489,36 @@ export default function Cart() {
 
             <motion.button
               whileHover={{
-                scale: updating || checkingOut ? 1 : 1.01,
-                y: updating || checkingOut ? 0 : -1,
+                scale:
+                  updating || checkingOut || totalItems === 0 || items.length === 0
+                    ? 1
+                    : 1.01,
+                y:
+                  updating || checkingOut || totalItems === 0 || items.length === 0
+                    ? 0
+                    : -1,
               }}
               whileTap={{
-                scale: updating || checkingOut ? 1 : 0.98,
+                scale:
+                  updating || checkingOut || totalItems === 0 || items.length === 0
+                    ? 1
+                    : 0.98,
                 y: 0,
               }}
               type="button"
-              onClick={handleCheckout}
+              onClick={handleMercadoPagoCheckout}
               disabled={
                 updating || checkingOut || totalItems === 0 || items.length === 0
               }
               className="mt-6 w-full rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold py-3 disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_12px_30px_rgba(15,23,42,0.45)]"
             >
-              {checkingOut ? "Procesando compra..." : "Ir a pagar (placeholder)"}
+              {checkingOut
+                ? "Redirigiendo a Mercado Pago..."
+                : "Pagar con Mercado Pago"}
             </motion.button>
           </div>
         </aside>
       </div>
-
-      {/* POPUP de compra exitosa */}
-      {showSuccess && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div
-            className="absolute inset-0"
-            onClick={() => setShowSuccess(false)}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            className="relative z-50 max-w-sm w-full mx-4 rounded-3xl bg-white p-6 shadow-2xl text-center"
-          >
-            <h3 className="text-lg font-semibold text-slate-900">
-              ¡Gracias por tu compra!
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Tu pedido fue registrado correctamente. Pronto te estaremos
-              contactando para coordinar el pago y el envío.
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setShowSuccess(false);
-                navigate("/shop");
-              }}
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-2 text-sm font-semibold text-white hover:bg-slate-800"
-            >
-              Seguir comprando
-            </button>
-          </motion.div>
-        </div>
-      )}
     </main>
   );
 }

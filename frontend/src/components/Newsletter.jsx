@@ -1,5 +1,9 @@
+// src/components/Newsletter.jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -12,20 +16,23 @@ export default function Newsletter() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/newsletter/subscribe/", {
+      const res = await fetch(`${API_BASE_URL}/newsletter/subscribe/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
-      const data = await res.json();
+      // si no hay JSON válido, que no rompa
+      const data = await res.json().catch(() => ({}));
 
-      if (!res.ok) throw new Error(data.detail || "Error desconocido");
+      if (!res.ok) {
+        throw new Error(data.detail || "Error al suscribirte.");
+      }
 
       setMsg("✓ Te suscribiste correctamente 🚀");
       setEmail("");
     } catch (err) {
-      setMsg("⚠️ " + err.message);
+      setMsg("⚠️ " + (err.message || "Hubo un problema al suscribirte."));
     } finally {
       setLoading(false);
     }

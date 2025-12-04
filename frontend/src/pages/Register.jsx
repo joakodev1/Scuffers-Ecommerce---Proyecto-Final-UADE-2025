@@ -182,7 +182,6 @@ export default function Register() {
             </p>
           </motion.div>
 
-          {/* CARD DE REGISTRO (BLANCA) */}
           <motion.div
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}

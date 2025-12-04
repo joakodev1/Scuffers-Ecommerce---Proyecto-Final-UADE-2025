@@ -2,11 +2,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import contactBg from "../assets/herotwohip.webp";
-import { sendContactMessage } from "../api/contact.js"; // 👈 NUEVO
+import { sendContactMessage } from "../api/contact.js"; 
 
 const COMPANY_EMAIL = "contacto@scuffers.com";
 
-// Acordeón de FAQ
+
 function FAQItem({ question, answer }) {
   const [open, setOpen] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Contact() {
     message: "",
   });
 
-  // null | "success" | "error"
+
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -71,7 +71,6 @@ export default function Contact() {
 
     const { name, email, subject, message } = formData;
 
-    // El backend espera solo "message", acá incluimos el asunto dentro del mensaje
     const finalMessage = subject
       ? `Asunto: ${subject}\n\n${message}`
       : message;
@@ -109,13 +108,12 @@ export default function Contact() {
         md:pt-28
       "
     >
-      {/* BACKGROUND IMAGE (igual que el hero) */}
+
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${contactBg})` }}
       />
 
-      {/* CAPA OSCURA (mismo tono que el home) */}
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/85 via-slate-950/55 to-slate-950/10" />
 
       {/* CONTENIDO */}

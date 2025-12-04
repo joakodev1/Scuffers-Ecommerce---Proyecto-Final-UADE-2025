@@ -1,44 +1,44 @@
 // src/components/ProductCard.jsx
 import { Link } from "react-router-dom";
-import { getImageUrl } from "../api/products.js";
 
 export default function ProductCard({ product }) {
-  const image = getImageUrl(product.image || product.imagen);
-  const hoverImage = getImageUrl(product.image_hover || product.imagen_hover);
+  const images = product.images || [];
+  const primaryImage = images[0];
+  const secondaryImage = images[1] || images[0]; 
 
   return (
     <Link
       to={`/product/${product.slug}`}
-      className="group flex flex-col bg-white rounded-3xl border border-slate-200/70 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-200"
+      className="group block"
     >
-      <div className="bg-slate-100/80">
-        <div className="aspect-[4/5] w-full overflow-hidden">
+      {/* CONTENEDOR IMAGEN CON HOVER */}
+      <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-100">
+        {/* Imagen principal */}
+        <img
+          src={primaryImage}
+          alt={product.name}
+          className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+        />
+        {/* Segunda imagen (hover) */}
+        {secondaryImage && (
           <img
-            src={image}
-            alt={product.nombre}
-            className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+            src={secondaryImage}
+            alt={product.name}
+            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           />
-          {hoverImage && (
-            <img
-              src={hoverImage}
-              alt={product.nombre}
-              className="h-full w-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            />
-          )}
-        </div>
+        )}
       </div>
 
-      <div className="px-4 pt-2 pb-4 space-y-1.5">
-        <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400">
-          {product.categoria || "Producto"}
+      {/* INFO DEL PRODUCTO */}
+      <div className="mt-3 space-y-1">
+        <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+          {product.category_name}
         </p>
-
-        <h3 className="text-sm font-medium text-slate-900 leading-snug line-clamp-2">
-          {product.nombre}
-        </h3>
-
-        <p className="text-sm font-semibold text-slate-900">
-          ${Number(product.precio).toLocaleString("es-AR")}
+        <p className="text-sm font-medium text-slate-900">
+          {product.name}
+        </p>
+        <p className="text-sm text-slate-700">
+          ${product.price}
         </p>
       </div>
     </Link>

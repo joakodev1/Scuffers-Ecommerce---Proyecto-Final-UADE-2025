@@ -19,7 +19,6 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [adding, setAdding] = useState(false);
-  const [added, setAdded] = useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
 
   const [openPayment, setOpenPayment] = useState(false);
@@ -41,22 +40,26 @@ export default function ProductDetail() {
     load();
   }, [slug]);
 
-  // --------------- REGLA: ¿ESTE PRODUCTO NECESITA TALLE? ---------------
   const category = (product?.categoria || "").toLowerCase();
 
-  const needsSize =
-    // si en el futuro agregás un booleano en el modelo, lo podés usar acá:
-    // Boolean(product?.tiene_talles) ||
-    ["remera", "remeras",
-     "buzo", "buzos",
-     "campera", "camperas",
-     "hoodie", "hoodies",
-     "pantalon", "pantalones", "pants",
-     "abrigo", "abrigos",
-     "camisa", "camisas"
-    ].some((kw) => category.includes(kw));
+  const needsSize = [
+    "remera",
+    "remeras",
+    "buzo",
+    "buzos",
+    "campera",
+    "camperas",
+    "hoodie",
+    "hoodies",
+    "pantalon",
+    "pantalones",
+    "pants",
+    "abrigo",
+    "abrigos",
+    "camisa",
+    "camisas",
+  ].some((kw) => category.includes(kw));
 
-  // usamos la misma condición para mostrar el selector
   const showSizeSelector = needsSize;
 
   // ---------------- AGREGAR AL CARRITO ----------------
@@ -68,7 +71,6 @@ export default function ProductDetail() {
 
     const identifier = product.slug;
 
-    // Validación fuerte de talle
     if (needsSize && !selectedSize) {
       setError("Seleccioná un talle antes de agregar al carrito.");
       return;
@@ -76,13 +78,9 @@ export default function ProductDetail() {
 
     try {
       setAdding(true);
-      setAdded(false);
       setError("");
 
       await addToCart(identifier, 1, needsSize ? selectedSize : null);
-
-      setAdded(true);
-      setTimeout(() => setAdded(false), 2000);
     } catch (err) {
       console.error("Error agregando al carrito:", err);
       setError("No se pudo agregar al carrito.");
@@ -98,17 +96,16 @@ export default function ProductDetail() {
   const rawImages =
     Array.isArray(product.images) && product.images.length > 0
       ? product.images
-      : [product.image, product.image_hover].filter(Boolean);
+      : [
+          product.imagen,
+          product.imagen_hover,
+          product.imagen_3,
+          product.imagen_4,
+        ].filter(Boolean);
 
-  const images = rawImages.map((img) => getImageUrl(img));
+  const images = rawImages.slice(0, 4).map((img) => getImageUrl(img));
 
-  const buttonLabel = adding
-    ? "Agregando..."
-    : added
-    ? "Agregado ✔"
-    : "Agregar al carrito";
-
-  // 🔒 botón deshabilitado si necesita talle y no se eligió
+  const buttonLabel = adding ? "Agregando..." : "Agregar al carrito";
   const buttonDisabled = adding || (needsSize && !selectedSize);
 
   return (
@@ -151,9 +148,7 @@ export default function ProductDetail() {
           {/* SELECTOR DE TALLES */}
           {showSizeSelector && (
             <div className="mt-3">
-              <p className="text-sm font-medium mb-2">
-                Talle{" "}
-              </p>
+              <p className="text-sm font-medium mb-2">Talle </p>
               <div className="flex gap-3">
                 {SIZES.map((size) => (
                   <button
@@ -177,9 +172,7 @@ export default function ProductDetail() {
             </div>
           )}
 
-          {error && (
-            <p className="text-sm text-red-500 mt-1">{error}</p>
-          )}
+          {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
 
           {/* BOTÓN */}
           <button

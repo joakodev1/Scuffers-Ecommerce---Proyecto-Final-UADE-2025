@@ -1,12 +1,18 @@
 // src/pages/ShopAll.jsx
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 
-import { fetchProducts } from "../api/products.js";
+import { fetchProducts, getImageUrl } from "../api/products.js";
 import { CATEGORY_LABELS } from "../data/products.js";
+import { useCart } from "../cart/CartContext.jsx";
+import { useAuth } from "../auth/AuthContext.jsx";
 
 export default function ShopAll() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  const { addToCart, updating } = useCart();
+  const { isAuthenticated } = useAuth();
 
   const cat = searchParams.get("cat") || "";
   const search = searchParams.get("search") || "";
@@ -38,6 +44,20 @@ export default function ShopAll() {
     load();
   }, [cat, search]);
 
+  // quick add (por ahora no lo usás, pero lo dejamos)
+  async function handleQuickAdd(e, product) {
+    e.preventDefault();
+    if (!isAuthenticated) {
+      navigate(`/login?next=/product/${product.slug}`);
+      return;
+    }
+    try {
+      await addToCart(product.slug, 1, null);
+    } catch (err) {
+      console.error("Error en quick add:", err);
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white px-4 pb-16">
       <div className="w-full mx-auto pt-12">
@@ -67,34 +87,46 @@ export default function ShopAll() {
           {products.map((product) => {
             const priceNumber = Number(product.precio ?? 0);
 
-            const mainImage =
-              product.image || product.imagen || product.image_url;
-            const hoverImage =
-              product.image_hover || product.image || product.imagen || mainImage;
+            const rawImages =
+              Array.isArray(product.images) && product.images.length > 0
+                ? product.images
+                : [
+                    product.imagen,
+                    product.imagen_hover,
+                    product.imagen_3,
+                    product.imagen_4,
+                  ].filter(Boolean);
+
+            const mainImageRaw = rawImages[0];
+            const hoverImageRaw = rawImages[1] ?? rawImages[0];
+
+            const mainImage = mainImageRaw ? getImageUrl(mainImageRaw) : null;
+            const hoverImage = hoverImageRaw ? getImageUrl(hoverImageRaw) : null;
 
             return (
               <Link
                 key={product.slug || product.id}
-                // 👇 solo usamos el slug para la ruta del detalle
                 to={`/product/${product.slug}`}
                 className="block group"
               >
                 <div className="cursor-pointer">
                   <div className="relative w-full aspect-[4/5] bg-white overflow-hidden">
-                    <img
-                      src={mainImage}
-                      alt={product.nombre}
-                      className="
-                        absolute inset-0 w-full h-full object-contain
-                        transition-opacity duration-300
-                        group-hover:opacity-0
-                      "
-                    />
+                    {mainImage && (
+                      <img
+                        src={mainImage}
+                        alt={product.nombre}
+                        className="
+                          absolute inset-0 w-full h-full object-contain
+                          transition-opacity duration-300
+                          group-hover:opacity-0
+                        "
+                      />
+                    )}
 
                     {hoverImage && (
                       <img
                         src={hoverImage}
-                        alt=""
+                        alt={`${product.nombre} 2`}
                         className="
                           absolute inset-0 w-full h-full object-contain
                           opacity-0
@@ -105,9 +137,11 @@ export default function ShopAll() {
                     )}
                   </div>
 
+                  {/* INFO PRODUCTO */}
                   <div className="mt-0">
                     <p className="text-[10px] uppercase tracking-[0.16em] text-slate-500">
-                      {CATEGORY_LABELS[product.categoria] || product.categoria}
+                      {CATEGORY_LABELS[product.categoria] ||
+                        product.categoria}
                     </p>
 
                     <p className="mt-1 text-[13px] font-medium leading-tight text-slate-900 line-clamp-2">

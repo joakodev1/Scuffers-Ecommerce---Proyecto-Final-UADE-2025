@@ -68,10 +68,8 @@ export default function LoginPage() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 backdrop-blur-[2px]" />
 
-      {/* Wrapper */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,7 +78,6 @@ export default function LoginPage() {
       >
         <div className="grid gap-10 md:grid-cols-[1.2fr,1fr] items-center">
           
-          {/* PANEL IZQUIERDO — ahora con fondo blanco */}
           <motion.div
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
