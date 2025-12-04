@@ -161,7 +161,7 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 # Siempre SMTP (tanto en DEBUG como en producción)
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER or "Scuffers <no-reply@scuffers.com>"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # --- SEGURIDAD EXTRA EN PRODUCCIÓN ---
 
