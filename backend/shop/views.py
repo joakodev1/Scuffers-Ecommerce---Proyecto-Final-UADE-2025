@@ -299,60 +299,54 @@ class CartRemoveItemView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-# ---------- CONTACTO ----------
 class ContactView(APIView):
     permission_classes = [AllowAny]
-    authentication_classes = []
 
     def post(self, request):
-        name = (request.data.get("name") or "").strip()
-        email = (request.data.get("email") or "").strip()
-        message = (request.data.get("message") or "").strip()
+        name = request.data.get("name")
+        email = request.data.get("email")
+        subject = request.data.get("subject")
+        message = request.data.get("message")
 
-        if not name or not email or not message:
+        if not all([name, email, subject, message]):
             return Response(
-                {"detail": "Faltan datos: nombre, email o mensaje."},
+                {"error": "Todos los campos son obligatorios."},
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        subject = f"Nuevo mensaje de contacto de {name}"
-        body = (
+        full_message = (
+            f"Nuevo mensaje desde el formulario de contacto:\n\n"
             f"Nombre: {name}\n"
             f"Email: {email}\n\n"
             f"Mensaje:\n{message}"
         )
 
-        from_email = getattr(settings, "DEFAULT_FROM_EMAIL", None) or getattr(
-            settings, "EMAIL_HOST_USER", None
-        )
-        to_email = [getattr(settings, "EMAIL_HOST_USER", None) or email]
-
-        if not from_email or not to_email[0]:
-            return Response(
-                {
-                    "detail": "El servidor de correo no está configurado correctamente."
-                },
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            )
-
         try:
             send_mail(
                 subject,
-                body,
-                from_email,
-                to_email,
+                full_message,
+                settings.DEFAULT_FROM_EMAIL,          # remitente (tu Gmail)
+                [settings.DEFAULT_FROM_EMAIL],        # destinatario (tu Gmail)
                 fail_silently=False,
             )
-        except Exception as e:
+
             return Response(
-                {"detail": f"No se pudo enviar el correo: {e}"},
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                {"success": True, "message": "Mensaje enviado correctamente."},
+                status=status.HTTP_200_OK,
             )
 
-        return Response(
-            {"detail": "Mensaje enviado correctamente."},
-            status=status.HTTP_200_OK,
-        )
+        except Exception as e:
+            # Esto va a aparecer en logs de Railway
+            print("ERROR CONTACTO:", repr(e))
+
+            return Response(
+                {
+                    "success": False,
+                    "error": "No se pudo enviar el mensaje. Revisar configuración SMTP.",
+                    "detail": str(e),  # si no querés exponer tanto, podés quitar esto
+                },
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
 
 class NewsletterSubscribeView(APIView):
     permission_classes = [AllowAny]
