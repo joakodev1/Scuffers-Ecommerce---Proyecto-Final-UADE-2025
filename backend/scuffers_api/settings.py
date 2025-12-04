@@ -15,12 +15,17 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # URL del frontend (Vite en local, Vercel en prod)
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
 
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_AUTOREFRESH = True if ENV == 'development' else False
+WHITENOISE_MANIFEST_STRICT = False
+
 # --- STATIC / MEDIA ---
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
