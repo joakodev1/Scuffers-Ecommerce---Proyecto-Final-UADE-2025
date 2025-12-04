@@ -1,9 +1,10 @@
+// src/pages/OrderDetail.jsx
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BASE_URL } from "../api/api.js";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE_URL = BASE_URL.replace(/\/api\/?$/, "");
 
 const statusLabels = {
   paid: "Pagado",
@@ -43,12 +44,15 @@ export default function OrderDetail() {
           localStorage.getItem("accessToken") ||
           localStorage.getItem("access");
 
-        const res = await fetch(`${API_BASE_URL}/orders/${orderId}/`, {
-          headers: {
-            "Content-Type": "application/json",
-            ...(token ? { Authorization: `Bearer ${token}` } : {}),
-          },
-        });
+        const res = await fetch(
+          `${API_BASE_URL}/api/orders/${orderId}/`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              ...(token ? { Authorization: `Bearer ${token}` } : {}),
+            },
+          }
+        );
 
         if (!res.ok) {
           if (res.status === 401) {

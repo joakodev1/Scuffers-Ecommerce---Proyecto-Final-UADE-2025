@@ -4,9 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../auth/AuthContext.jsx";
 import registerHero from "../assets/registerhero.webp";
+import { BASE_URL } from "../api/api.js";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE_URL = BASE_URL; // ya viene con /api
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -132,7 +132,6 @@ export default function Register() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 w-full max-w-5xl"
       >
-        {/* items-center para que las tarjetas no se estiren de más */}
         <div className="grid gap-8 md:grid-cols-[1.15fr,1fr] items-center">
           {/* PANEL IZQUIERDO */}
           <motion.div
@@ -182,6 +181,7 @@ export default function Register() {
             </p>
           </motion.div>
 
+          {/* PANEL DERECHO (FORM) */}
           <motion.div
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}

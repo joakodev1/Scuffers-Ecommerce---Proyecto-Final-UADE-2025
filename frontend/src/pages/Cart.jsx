@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 import { useAuth } from "../auth/AuthContext.jsx";
 import { useCart } from "../cart/CartContext.jsx";
 import { getImageUrl } from "../api/products.js";
+import { BASE_URL } from "../api/api.js";
+
+// Host base SIN /api (para armar /api/... encima)
+const API_BASE_URL = BASE_URL.replace(/\/api\/?$/, "");
 
 // 🔐 Detecta si un string "parece" un JWT (tres partes separadas por puntos)
 function looksLikeJwt(token) {
@@ -54,7 +58,10 @@ function getJwtToken() {
     const raw = localStorage.getItem(key);
 
     if (looksLikeJwt(raw)) {
-      console.log("[checkout] JWT encontrado por heurística (string) en key:", key);
+      console.log(
+        "[checkout] JWT encontrado por heurística (string) en key:",
+        key
+      );
       return raw;
     }
 
@@ -73,13 +80,16 @@ function getJwtToken() {
     }
   }
 
-  console.warn("[checkout] No se encontró JWT en localStorage. Keys:", Object.keys(localStorage));
+  console.warn(
+    "[checkout] No se encontró JWT en localStorage. Keys:",
+    Object.keys(localStorage)
+  );
   return "";
 }
 
 export default function Cart() {
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth(); // ya no intento accessToken del contexto
+  const { isAuthenticated } = useAuth();
 
   const {
     cart,
@@ -125,13 +135,11 @@ export default function Cart() {
   }
 
   function getItemProduct(item) {
-
     return item.producto || item.product || {};
   }
 
   function getItemImageSrc(item) {
     const p = getItemProduct(item);
-
 
     const raw =
       (Array.isArray(p.images) && p.images[0]) ||
@@ -161,13 +169,11 @@ export default function Cart() {
   }
 
   function getItemSubtotal(item) {
-
     if (item.subtotal != null) {
       return Number(item.subtotal);
     }
     return getItemPrice(item) * Number(item.cantidad ?? 1);
   }
-
 
   async function handlePlus(item) {
     const slug = getItemSlug(item);
@@ -192,12 +198,7 @@ export default function Cart() {
   }
 
   async function handleMercadoPagoCheckout() {
-    if (
-      totalItems === 0 ||
-      items.length === 0 ||
-      checkingOut ||
-      updating
-    ) {
+    if (totalItems === 0 || items.length === 0 || checkingOut || updating) {
       return;
     }
 
@@ -212,9 +213,6 @@ export default function Cart() {
         );
         return;
       }
-
-      const API_BASE_URL =
-        import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
       // 1) Crear pedido desde el carrito
       const createRes = await fetch(
@@ -283,17 +281,17 @@ export default function Cart() {
       );
 
       if (!mpRes.ok) {
-  const err = await mpRes.json().catch(() => ({}));
-  console.error("Error al crear preferencia MP", err);
+        const err = await mpRes.json().catch(() => ({}));
+        console.error("Error al crear preferencia MP", err);
 
-  const mpMsg =
-    err?.mp_error?.message ||
-    err?.detail ||
-    "No se pudo iniciar el pago con Mercado Pago.";
+        const mpMsg =
+          err?.mp_error?.message ||
+          err?.detail ||
+          "No se pudo iniciar el pago con Mercado Pago.";
 
-  alert(`Error de Mercado Pago: ${mpMsg}`);
-  return;
-}
+        alert(`Error de Mercado Pago: ${mpMsg}`);
+        return;
+      }
 
       const mpData = await mpRes.json();
 

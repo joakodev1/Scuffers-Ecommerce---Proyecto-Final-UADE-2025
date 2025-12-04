@@ -92,11 +92,13 @@ export default function ProductDetail() {
   if (loading) return <div className="p-10 text-center">Cargando...</div>;
   if (error && !product) return <div className="p-10 text-center">{error}</div>;
 
-  // Imágenes
+  // ---------------- IMÁGENES ----------------
   const rawImages =
     Array.isArray(product.images) && product.images.length > 0
       ? product.images
       : [
+          product.image_url,
+          product.image_hover_url,
           product.imagen,
           product.imagen_hover,
           product.imagen_3,
@@ -148,7 +150,7 @@ export default function ProductDetail() {
           {/* SELECTOR DE TALLES */}
           {showSizeSelector && (
             <div className="mt-3">
-              <p className="text-sm font-medium mb-2">Talle </p>
+              <p className="text-sm font-medium mb-2">Talle</p>
               <div className="flex gap-3">
                 {SIZES.map((size) => (
                   <button

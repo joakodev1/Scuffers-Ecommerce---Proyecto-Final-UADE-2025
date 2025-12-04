@@ -1,7 +1,9 @@
 // src/api/api.js
 import axios from "axios";
 
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+export const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://scuffers-ecommerce-proyecto-final-uade-2025-production.up.railway.app/api";
 
 const api = axios.create({
   baseURL: BASE_URL,

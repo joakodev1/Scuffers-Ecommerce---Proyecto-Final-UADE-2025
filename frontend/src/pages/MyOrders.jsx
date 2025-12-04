@@ -1,9 +1,10 @@
+// src/pages/MyOrders.jsx
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BASE_URL } from "../api/api.js";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE_URL = BASE_URL.replace(/\/api\/?$/, "");
 
 const statusStyles = {
   paid: "bg-emerald-100 text-emerald-800 border border-emerald-200",
@@ -35,12 +36,15 @@ export default function MyOrders() {
           localStorage.getItem("accessToken") ||
           localStorage.getItem("access");
 
-        const res = await fetch(`${API_BASE_URL}/orders/my/?status=paid`, {
-          headers: {
-            "Content-Type": "application/json",
-            ...(token ? { Authorization: `Bearer ${token}` } : {}),
-          },
-        });
+        const res = await fetch(
+          `${API_BASE_URL}/api/orders/my/?status=paid`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              ...(token ? { Authorization: `Bearer ${token}` } : {}),
+            },
+          }
+        );
 
         if (!res.ok) {
           if (res.status === 401) {
@@ -164,7 +168,7 @@ export default function MyOrders() {
                       transition={{ duration: 0.2 }}
                       className="px-4 sm:px-6 py-4 flex flex-col gap-3"
                     >
-                      {/* fila principal (ID / fecha / estado / total / acción) */}
+                      {/* fila principal */}
                       <div className="flex flex-col md:grid md:grid-cols-12 md:items-center gap-2 md:gap-4">
                         {/* ID */}
                         <div className="md:col-span-2 text-sm font-semibold text-slate-900">

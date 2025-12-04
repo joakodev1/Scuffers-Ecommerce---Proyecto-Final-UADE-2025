@@ -44,7 +44,6 @@ export default function ShopAll() {
     load();
   }, [cat, search]);
 
-  // quick add (por ahora no lo usás, pero lo dejamos)
   async function handleQuickAdd(e, product) {
     e.preventDefault();
     if (!isAuthenticated) {
@@ -87,21 +86,23 @@ export default function ShopAll() {
           {products.map((product) => {
             const priceNumber = Number(product.precio ?? 0);
 
+            // Preferimos la galería `images` que arma el serializer
             const rawImages =
               Array.isArray(product.images) && product.images.length > 0
                 ? product.images
                 : [
+                    product.image_url,
+                    product.image_hover_url,
                     product.imagen,
                     product.imagen_hover,
                     product.imagen_3,
                     product.imagen_4,
                   ].filter(Boolean);
 
-            const mainImageRaw = rawImages[0];
-            const hoverImageRaw = rawImages[1] ?? rawImages[0];
-
-            const mainImage = mainImageRaw ? getImageUrl(mainImageRaw) : null;
-            const hoverImage = hoverImageRaw ? getImageUrl(hoverImageRaw) : null;
+            const mainImage = rawImages[0] ? getImageUrl(rawImages[0]) : null;
+            const hoverImage = rawImages[1]
+              ? getImageUrl(rawImages[1])
+              : mainImage;
 
             return (
               <Link

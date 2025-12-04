@@ -1,9 +1,9 @@
 // src/components/Newsletter.jsx
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { BASE_URL } from "../api/api.js";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+const API_BASE_URL = BASE_URL;
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -22,7 +22,6 @@ export default function Newsletter() {
         body: JSON.stringify({ email }),
       });
 
-      // si no hay JSON válido, que no rompa
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {

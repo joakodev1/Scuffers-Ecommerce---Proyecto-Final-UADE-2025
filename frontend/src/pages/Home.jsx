@@ -47,7 +47,6 @@ function FeaturedProductsSection() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           />
 
-
           <Link
             to="/shop"
             className="text-sm text-sky-600 hover:text-sky-700 hover:underline"
@@ -79,51 +78,56 @@ function FeaturedProductsSection() {
           "
         >
           {products.map((product) => {
+            // precio numérico
             const priceNumber = Number(product.precio ?? 0);
 
-            const imagesArray =
-              product.images && product.images.length > 0
-                ? product.images
-                : [product.image, product.image_hover].filter(Boolean);
+            // imágenes desde el backend
+            const img1 =
+              product.images?.[0] ||
+              product.image_url ||
+              product.imagen ||
+              "/placeholder.png";
 
-            const mainImage = product.image || imagesArray[0];
-            const hoverImage =
-              product.image_hover || imagesArray[1] || mainImage;
+            const img2 =
+              product.images?.[1] ||
+              product.image_hover_url ||
+              product.imagen_hover ||
+              img1;
 
             return (
               <Link
                 key={product.slug || product.id}
-                to={`/product/${product.slug || product.id}`}
+                to={`/product/${product.slug}`}
                 className="block group"
               >
                 <div className="cursor-pointer">
-
                   <div className="relative w-full aspect-[4/5] bg-white overflow-hidden">
+
+                    {/* Imagen principal */}
                     <img
-                      src={mainImage}
+                      src={img1}
                       alt={product.nombre}
                       className="
-                        absolute inset-0 w-full h-full object-contain
+                        absolute inset-0 w-full h-full object-cover
                         transition-opacity duration-300
                         group-hover:opacity-0
                       "
                     />
 
-                    {hoverImage && (
-                      <img
-                        src={hoverImage}
-                        alt=""
-                        className="
-                          absolute inset-0 w-full h-full object-contain
-                          opacity-0
-                          transition-opacity duration-300
-                          group-hover:opacity-100
-                        "
-                      />
-                    )}
+                    {/* Imagen hover */}
+                    <img
+                      src={img2}
+                      alt=""
+                      className="
+                        absolute inset-0 w-full h-full object-cover
+                        opacity-0
+                        transition-opacity duration-300
+                        group-hover:opacity-100
+                      "
+                    />
                   </div>
 
-                  {/* Textos */}
+                  {/* Info */}
                   <div className="mt-0">
                     <p className="text-[10px] uppercase tracking-[0.16em] text-slate-500">
                       {CATEGORY_LABELS[product.categoria] || product.categoria}
