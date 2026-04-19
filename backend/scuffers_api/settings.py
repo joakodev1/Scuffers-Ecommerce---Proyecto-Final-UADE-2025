@@ -55,15 +55,13 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
     "cloudinary_storage",
     "cloudinary",
+    "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
-    # backend del proyecto
     "shop.apps.ShopConfig",
-    # backend de email con SendGrid
     "sendgrid_backend",
 ]
 
