@@ -76,19 +76,20 @@ class ProductoSerializer(serializers.ModelSerializer):
 
     # ---------- helper interno único ----------
     def _build_url(self, file_field):
-        """
-        Devuelve URL absoluta si hay request en el contexto,
-        si no, devuelve la URL relativa del archivo.
-        """
-        if not file_field:
-            return None
+    if not file_field:
+        return None
 
-        request = self.context.get("request")
-        url = file_field.url
+    url = file_field.url
 
-        if request is not None:
-            return request.build_absolute_uri(url)
+    # Si ya es una URL absoluta (Cloudinary), la devolvemos tal cual
+    if url.startswith("http://") or url.startswith("https://"):
         return url
+
+    # Si es relativa, la completamos con el request
+    request = self.context.get("request")
+    if request is not None:
+        return request.build_absolute_uri(url)
+    return url
 
     # ---------- URLs individuales ----------
     def get_image_url(self, obj):
