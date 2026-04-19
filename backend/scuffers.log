@@ -39,3 +39,4 @@ Not Found: /admin
 "GET /api/products/ HTTP/1.1" 200 2
 "GET /api/products/ HTTP/1.1" 200 2
 "GET /api/products/ HTTP/1.1" 200 2
+Watching for file changes with StatReloader
