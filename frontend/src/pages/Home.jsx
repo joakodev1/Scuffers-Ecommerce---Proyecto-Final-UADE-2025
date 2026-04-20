@@ -79,23 +79,16 @@ function FeaturedProductsSection() {
           "
         >
           {products.map((product) => {
-            // precio numérico
             const priceNumber = Number(product.precio ?? 0);
 
-              // imágenes desde el backend
-              const img1 = getImageUrl(
-                product.images?.[0] ||
-                product.image_url ||
-                product.imagen
-              );
+            // product.imagen ya viene procesado por fetchProducts con getImageUrl
+            const img1 = product.imagen || "";
 
-              const img2 = getImageUrl(
-                product.images?.[1] ||
-                product.image_hover_url ||
-                product.imagen_hover ||
-                product.images?.[0] ||
-                product.imagen
-              );
+            const img2 = getImageUrl(
+              product.images?.[1] ||
+              product.image_hover_url ||
+              product.imagen_hover
+            ) || img1;
 
             return (
               <Link
