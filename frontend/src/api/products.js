@@ -13,28 +13,25 @@ export const API_BASE_URL = API_URL.replace(/\/api\/?$/, "");
 export function getImageUrl(path) {
   if (!path) return "";
 
-  // 1) Si viene con http://127.0.0.1:8000 o localhost, la mapeamos al dominio de Railway
-  if (
-    path.startsWith("http://127.0.0.1:8000") ||
-    path.startsWith("http://localhost:8000")
-  ) {
-    try {
-      const url = new URL(path);
-      // solo usamos el pathname (/media/lo-que-sea)
-      return `${API_BASE_URL}${url.pathname}`;
-    } catch {
-      // si falla el parse, seguimos abajo
-    }
+  const CLOUD_NAME = "dmkm2bduz";
+
+  // Si es URL de Render con /media/products/, extraemos el nombre y lo mandamos a Cloudinary
+  if (path.includes("/media/products/")) {
+    const filename = path.split("/media/products/")[1];
+    return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/products/${filename}`;
   }
 
-  // 2) Si ya es una URL http(s) válida a otro dominio, la dejamos como está
-  if (path.startsWith("http://") || path.startsWith("https://")) {
+  // Si ya es URL de Cloudinary, la dejamos
+  if (path.startsWith("https://res.cloudinary.com")) {
     return path;
   }
 
-  // 3) Si es una ruta relativa tipo "media/..." o "/media/..."
-  const normalized = path.startsWith("/") ? path : `/${path}`;
-  return `${API_BASE_URL}${normalized}`;
+  // Si es public_id relativo
+  if (!path.startsWith("http")) {
+    return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${path}`;
+  }
+
+  return path;
 }
 
 /**
