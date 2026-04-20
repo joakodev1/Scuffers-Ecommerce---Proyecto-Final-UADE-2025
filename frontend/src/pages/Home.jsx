@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { getImageUrl } from "../api/products.js";
 
 import Hero from "../components/Hero.jsx";
 import { fetchProducts } from "../api/products.js";
@@ -81,18 +82,20 @@ function FeaturedProductsSection() {
             // precio numérico
             const priceNumber = Number(product.precio ?? 0);
 
-            // imágenes desde el backend
-            const img1 =
-              product.images?.[0] ||
-              product.image_url ||
-              product.imagen ||
-              "/placeholder.png";
+              // imágenes desde el backend
+              const img1 = getImageUrl(
+                product.images?.[0] ||
+                product.image_url ||
+                product.imagen
+              );
 
-            const img2 =
-              product.images?.[1] ||
-              product.image_hover_url ||
-              product.imagen_hover ||
-              img1;
+              const img2 = getImageUrl(
+                product.images?.[1] ||
+                product.image_hover_url ||
+                product.imagen_hover ||
+                product.images?.[0] ||
+                product.imagen
+              );
 
             return (
               <Link
