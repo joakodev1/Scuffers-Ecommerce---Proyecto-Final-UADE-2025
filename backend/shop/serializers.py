@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from rest_framework import serializers
-
+ 
 from .models import (
     Pedido,
     OrderItem,
@@ -11,36 +11,36 @@ from .models import (
     Carrito,
     Cliente,
 )
-
-
+ 
+ 
 # =========================================================
 #                     PRODUCTOS
 # =========================================================
-
+ 
 class ProductoSerializer(serializers.ModelSerializer):
     """
     Serializer principal de productos (público y admin).
-
+ 
     El modelo tiene campos:
       - imagen
       - imagen_hover
       - imagen_3
       - imagen_4
-
+ 
     Además exponemos:
       - image_url, image_hover_url, image_3_url, image_4_url
       - images: lista con todas las URLs (para la galería del ProductDetail)
     """
-
+ 
     # URLs individuales cómodas para el front
     image_url = serializers.SerializerMethodField()
     image_hover_url = serializers.SerializerMethodField()
     image_3_url = serializers.SerializerMethodField()
     image_4_url = serializers.SerializerMethodField()
-
+ 
     # galería combinada
     images = serializers.SerializerMethodField()
-
+ 
     class Meta:
         model = Producto
         fields = [
@@ -52,58 +52,56 @@ class ProductoSerializer(serializers.ModelSerializer):
             "descripcion",
             "stock",
             "tag",
-
+ 
             # campos de archivo TAL CUAL en el modelo
             "imagen",
             "imagen_hover",
             "imagen_3",
             "imagen_4",
-
+ 
             # urls derivadas
             "image_url",
             "image_hover_url",
             "image_3_url",
             "image_4_url",
-
+ 
             # galería (para ProductDetail / ShopAll)
             "images",
-
+ 
             "activo",
         ]
         extra_kwargs = {
             "slug": {"required": False, "allow_blank": True},
         }
-
-    # ---------- helper interno único ----------
+ 
     def _build_url(self, file_field):
-    if not file_field:
-        return None
-
-    url = file_field.url
-
-    # Si ya es una URL absoluta (Cloudinary), la devolvemos tal cual
-    if url.startswith("http://") or url.startswith("https://"):
+        if not file_field:
+            return None
+ 
+        url = file_field.url
+ 
+        if url.startswith("http://") or url.startswith("https://"):
+            return url
+ 
+        # Si es relativa, la completamos con el request
+        request = self.context.get("request")
+        if request is not None:
+            return request.build_absolute_uri(url)
         return url
-
-    # Si es relativa, la completamos con el request
-    request = self.context.get("request")
-    if request is not None:
-        return request.build_absolute_uri(url)
-    return url
-
+ 
     # ---------- URLs individuales ----------
     def get_image_url(self, obj):
         return self._build_url(obj.imagen)
-
+ 
     def get_image_hover_url(self, obj):
         return self._build_url(obj.imagen_hover)
-
+ 
     def get_image_3_url(self, obj):
         return self._build_url(obj.imagen_3)
-
+ 
     def get_image_4_url(self, obj):
         return self._build_url(obj.imagen_4)
-
+ 
     # ---------- galería ----------
     def get_images(self, obj):
         """
@@ -113,52 +111,52 @@ class ProductoSerializer(serializers.ModelSerializer):
         """
         files = [obj.imagen, obj.imagen_hover, obj.imagen_3, obj.imagen_4]
         urls = []
-
+ 
         for f in files:
             u = self._build_url(f)
             if u:
                 urls.append(u)
-
+ 
         return urls
-
+ 
     # ---------- create/update con slug automático ----------
     def create(self, validated_data):
         if not validated_data.get("slug") and validated_data.get("nombre"):
             validated_data["slug"] = slugify(validated_data["nombre"])
         return super().create(validated_data)
-
+ 
     def update(self, instance, validated_data):
         if not validated_data.get("slug") and validated_data.get("nombre"):
             validated_data["slug"] = slugify(validated_data["nombre"])
         return super().update(instance, validated_data)
-
-
+ 
+ 
 # =========================================================
 #                       CARRITO
 # =========================================================
-
+ 
 class ItemCarritoSerializer(serializers.ModelSerializer):
     producto = ProductoSerializer(read_only=True)  # Producto completo
     subtotal = serializers.SerializerMethodField()
-
+ 
     class Meta:
         model = ItemCarrito
         fields = ["id", "producto", "cantidad", "talle", "subtotal"]
-
+ 
     def get_subtotal(self, obj):
         """Devuelve cantidad x precio."""
         if not obj.producto:
             return 0
         return obj.cantidad * obj.producto.precio
-
-
+ 
+ 
 class CarritoSerializer(serializers.ModelSerializer):
     items = ItemCarritoSerializer(many=True, read_only=True)
     total_items = serializers.IntegerField(read_only=True)
     total_precio = serializers.DecimalField(
         max_digits=10, decimal_places=2, read_only=True
     )
-
+ 
     class Meta:
         model = Carrito
         fields = [
@@ -167,18 +165,18 @@ class CarritoSerializer(serializers.ModelSerializer):
             "total_items",
             "total_precio",
         ]
-
-
+ 
+ 
 # =========================================================
 #                     USUARIOS / AUTH
 # =========================================================
-
+ 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "username", "email", "first_name", "last_name"]
-
-
+ 
+ 
 class RegisterSerializer(serializers.Serializer):
     """
     Registro por email + password.
@@ -187,12 +185,12 @@ class RegisterSerializer(serializers.Serializer):
     password = serializers.CharField(write_only=True, min_length=6)
     first_name = serializers.CharField(required=False, allow_blank=True)
     last_name = serializers.CharField(required=False, allow_blank=True)
-
+ 
     def validate_email(self, value):
         if User.objects.filter(email=value).exists():
             raise serializers.ValidationError("Ya existe un usuario con este email.")
         return value
-
+ 
     def create(self, validated_data):
         user = User.objects.create_user(
             username=validated_data["email"],  # email como username
@@ -202,12 +200,12 @@ class RegisterSerializer(serializers.Serializer):
             last_name=validated_data.get("last_name", ""),
         )
         return user
-
-
+ 
+ 
 # =========================================================
 #                     CLIENTE
 # =========================================================
-
+ 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
@@ -221,8 +219,8 @@ class ClienteSerializer(serializers.ModelSerializer):
             "fecha_creacion",
         ]
         read_only_fields = ["fecha_creacion"]
-
-
+ 
+ 
 class ClienteAddressSerializer(serializers.ModelSerializer):
     """
     Versión simplificada para /me/address/
@@ -236,12 +234,12 @@ class ClienteAddressSerializer(serializers.ModelSerializer):
             "codigo_postal",
             "telefono",
         ]
-
-
+ 
+ 
 # =========================================================
 #                  PEDIDOS / ORDER
 # =========================================================
-
+ 
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
@@ -249,16 +247,16 @@ class OrderItemSerializer(serializers.ModelSerializer):
             "id",
             "producto",
             "nombre_producto",
-            "talle",            # 👈 añadido para que el front pueda mostrar el talle
+            "talle",
             "cantidad",
             "precio_unitario",
             "subtotal",
         ]
-
-
+ 
+ 
 class PedidoDetailSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True, read_only=True)
-
+ 
     class Meta:
         model = Pedido
         fields = [
@@ -275,6 +273,7 @@ class PedidoDetailSerializer(serializers.ModelSerializer):
             "total_productos",
             "costo_envio",
             "total_final",
-            "creado",     # 👈 campo real del modelo
+            "creado",
             "items",
         ]
+ 

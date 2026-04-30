@@ -3,52 +3,50 @@ import os
 from datetime import timedelta
 from dotenv import load_dotenv
 import cloudinary
-
+ 
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
-
+ 
 # --- CORE / SEGURIDAD BÁSICA ---
-
+ 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-me")
 DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
-# URL del frontend (Vite en local, Vercel en prod)
+ 
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
-
+ 
 ENV = os.environ.get("DJANGO_ENV", "development")
-
+ 
 WHITENOISE_AUTOREFRESH = ENV == "development"
 WHITENOISE_USE_FINDERS = ENV == "development"
 WHITENOISE_MANIFEST_STRICT = False
-
+ 
 # --- CLOUDINARY ---
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY':    os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
-
+ 
 cloudinary.config(
     cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'),
     api_key    = os.getenv('CLOUDINARY_API_KEY'),
     api_secret = os.getenv('CLOUDINARY_API_SECRET'),
 )
-
+ 
 # --- STATIC / MEDIA ---
-
+ 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+ 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-
+ 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
+ 
 # --- APPS ---
-
+ 
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -60,13 +58,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_simplejwt",
+    "rest_framework_simplejwt.token_blacklist",  # 👈 NUEVO: blacklist de tokens
     "corsheaders",
     "shop.apps.ShopConfig",
     "sendgrid_backend",
 ]
-
+ 
 # --- MIDDLEWARE ---
-
+ 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -78,9 +77,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+ 
 ROOT_URLCONF = "scuffers_api.urls"
-
+ 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -95,18 +94,16 @@ TEMPLATES = [
         },
     },
 ]
-
+ 
 WSGI_APPLICATION = "scuffers_api.wsgi.application"
-
+ 
 # --- DATABASE ---
 if os.getenv("DATABASE_URL"):
-    # Render (PostgreSQL)
     import dj_database_url
     DATABASES = {
         "default": dj_database_url.config(conn_max_age=600)
     }
 else:
-    # Local (MySQL)
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
@@ -120,14 +117,14 @@ else:
             },
         }
     }
-
+ 
 # --- MERCADO PAGO ---
-
+ 
 MP_ACCESS_TOKEN = os.getenv("MP_ACCESS_TOKEN")
 MP_PUBLIC_KEY = os.getenv("MP_PUBLIC_KEY")
-
+ 
 # --- PASSWORD VALIDATION ---
-
+ 
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -142,91 +139,101 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
+ 
 # --- I18N / TIMEZONE ---
-
+ 
 LANGUAGE_CODE = "es-ar"
 TIME_ZONE = "America/Argentina/Buenos_Aires"
 USE_I18N = True
 USE_TZ = True
-
+ 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+ 
 # --- DRF / JWT ---
-
+ 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",  # 👈 CAMBIADO: protegido por defecto
     ],
+    # 👇 NUEVO: rate limiting por defecto
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+        "rest_framework.throttling.UserRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "60/hour",       # usuarios no logueados: 60 req/hora
+        "user": "300/hour",      # usuarios logueados: 300 req/hora
+        "login": "10/minute",    # login: máximo 10 intentos por minuto
+        "register": "5/minute",  # registro: máximo 5 por minuto
+    },
 }
-
+ 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=4),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     "AUTH_HEADER_TYPES": ("Bearer",),
+    # 👇 NUEVO: rotar y blacklistear tokens al hacer refresh/logout
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "UPDATE_LAST_LOGIN": True,
 }
-
-# En producción, sacamos la API navegable de DRF
+ 
 if not DEBUG:
     REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = (
         "rest_framework.renderers.JSONRenderer",
     )
-
+ 
 # --- CORS / CSRF ---
 CORS_ALLOWED_ORIGINS = [
     FRONTEND_ORIGIN,
 ]
-
+ 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
 ]
-
+ 
 CSRF_TRUSTED_ORIGINS = [
     FRONTEND_ORIGIN,
     "https://*.vercel.app",
 ]
-
+ 
 # --- EMAIL (SENDGRID) ---
-
-# API key definida en Railway / .env
+ 
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
-
-# Email que aparece como remitente (tiene que estar verificado en SendGrid)
+ 
 DEFAULT_FROM_EMAIL = os.getenv(
     "DEFAULT_FROM_EMAIL",
-    "scuffersuade@gmail.com",  # el que verificaste como Single Sender
+    "scuffersuade@gmail.com",
 )
-
-# Backend de email usando SendGrid (no usa SMTP bloqueado por Railway)
+ 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-
-# Config extra recomendada
+ 
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 SENDGRID_TRACK_EMAIL_OPENS = False
-SENDGRID_ECHO_TO_STDOUT = DEBUG  # en local ves el JSON en consola
-
+SENDGRID_ECHO_TO_STDOUT = DEBUG
+ 
 # --- SEGURIDAD EXTRA EN PRODUCCIÓN ---
-
+ 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = True
-
+ 
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-
+ 
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-
+ 
 # Siempre
 X_FRAME_OPTIONS = "DENY"
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
-
+ 
 # --- LOGGING BÁSICO ---
-
+ 
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
