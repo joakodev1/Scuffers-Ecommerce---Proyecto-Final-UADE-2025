@@ -181,7 +181,7 @@ class Pedido(models.Model):
         default=ESTADO_PENDIENTE,
     )
 
-    # snapshot de datos del cliente
+    
     email = models.EmailField(blank=True)
     nombre = models.CharField(max_length=150, blank=True)
     telefono = models.CharField(max_length=50, blank=True)

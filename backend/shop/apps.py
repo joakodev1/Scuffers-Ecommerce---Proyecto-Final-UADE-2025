@@ -36,5 +36,5 @@ class ShopConfig(AppConfig):
                 print(f"*** DEFAULT SUPERUSER ALREADY EXISTS: {username}")
 
         except Exception as e:
-            # No rompas el arranque si algo falla, solo logueá
+            
             print("*** ERROR CREATING DEFAULT SUPERUSER:", repr(e))

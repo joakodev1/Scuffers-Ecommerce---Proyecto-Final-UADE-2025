@@ -81,7 +81,6 @@ class PedidoAdmin(admin.ModelAdmin):
     search_fields = ("id", "cliente__user__username", "cliente__user__email")
     inlines = [OrderItemInline]
 
-    # campos que NO se deben editar a mano
     readonly_fields = (
         "total_productos",
         "mp_payment_id",
@@ -116,11 +115,11 @@ class PedidoAdmin(admin.ModelAdmin):
         """
         Marca los pedidos seleccionados como PAGADOS y mp_status=approved.
         """
-        # Si tu modelo tiene constante ESTADO_PAGADO, la usamos
+        
         try:
             nuevo_estado = Pedido.ESTADO_PAGADO
         except AttributeError:
-            # fallback: value de la choice en BD
+            
             nuevo_estado = "paid"
 
         actualizados = queryset.update(estado=nuevo_estado, mp_status="approved")
